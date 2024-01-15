@@ -159,7 +159,8 @@ if (mouse_check_button_pressed(mb_left) && attack_cd <= 0) {
     var hitted_enemy = noone; // Initialize to no enemy hitted
 
     // Iterate through all instances of oEnemy
-    with (oEnemy) {
+    with (oEnemy) 
+	{
         if (point_distance(x, y, oPlayer.x, oPlayer.y) < oPlayer.attack_range) 
 		{
             hitted_enemy = id;
@@ -174,6 +175,17 @@ if (mouse_check_button_pressed(mb_left) && attack_cd <= 0) {
 		hitted_enemy.dead=true;
 		} 
     }
+	
+	 var hitted_chest = noone; // Initialize to no enemy hitted
+	 with (oChest) 
+	 {
+        if (point_distance(x, y, oPlayer.x, oPlayer.y) < oPlayer.attack_range) 
+		{
+			hitted_chest = id;
+			hitted_chest.state -=1;
+        }
+    }
+	
 	attack_cd=attack_cd_max;
 }
 

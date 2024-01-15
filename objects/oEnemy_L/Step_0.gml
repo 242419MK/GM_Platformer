@@ -40,6 +40,6 @@ if (instance_exists(oPlayer))
 
 if(dead==true)
 {
-	var reward = instance_create_layer(x, y, "Player", oGoldCoin);
+	var reward = instance_create_layer(x, y-50, "Player", oGoldCoin);
 	instance_destroy();
 }
