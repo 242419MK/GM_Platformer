@@ -1,3 +1,15 @@
+image_speed = 1;
+
+vsp2 = vsp2 + grv2;
+if (place_meeting(x, y + vsp2, oWall))
+	{
+		while(!place_meeting(x, y + sign(vsp2) ,oWall))
+		{
+			y = y +sign(vsp2);
+		}
+		vsp2=0;
+	}
+	
 //Attack enemy in close range
 if (place_meeting(x, y, oPlayer)) {
     speed = 0;
@@ -11,17 +23,23 @@ if (place_meeting(x, y, oPlayer)) {
 if (rage) {
     rage_timer -= 1;
     if (rage_timer == 0) {
+		image_speed = 2;
         sprite_index = sEnemy_S_Attack_S2;
         rage_timer = 30;
         rage = false;
     }
 } else {
-    sprite_index = sEnemy_S2;
+	if(shooting_timer<80)
+	{	
+		sprite_index = sEnemy_S2;
+	}
 }
 
 // Shooting logic for the child object
+
 shooting_timer -= 1;
 if (shooting_timer <= 0) {
+	sprite_index = sEnemy_S_Attack_S2;
     // Your custom shooting logic for the child object
 	if (instance_exists(oPlayer)&& point_distance(x, y, oPlayer.x, oPlayer.y) < 500)
 	{
@@ -29,7 +47,10 @@ if (shooting_timer <= 0) {
 		{
 			for (var i = 0; i < 3; i++) 
 			{
-		        var bullet = instance_create_layer(x, y, "Enemies", oEnemy_Bullet_Big);
+				var adjust = 0;
+				if(oPlayer.x<oEnemy_S_2.x){adjust = -32;}
+				else {adjust = 32;}
+		        var bullet = instance_create_layer(x+adjust, y, "Enemies", oEnemy_Bullet_Big);
 
 		        // Calculate the direction for each bullet
 		        var bulletDirection = point_direction(x, y, oPlayer.x + random_range(-8, 8), oPlayer.y + random_range(-8, 8));
@@ -42,10 +63,10 @@ if (shooting_timer <= 0) {
 		        }
 				bullet.direction = bulletDirection;	
 		    }
-			
+			 shooting_timer = 120; // Reset the timer for the next shot
 		}
 	}
-    shooting_timer = 120; // Reset the timer for the next shot
+   
 }
 
 if(dead==true)

@@ -1,6 +1,6 @@
 grv2 = 0.7;
 grabbed = false;
-
+vsp2=1;
 rage_timer = 30;
 rage = false;
 

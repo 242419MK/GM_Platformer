@@ -27,10 +27,7 @@ if (place_meeting(x+hsp2, y, oWall))
 	}
 	
 
-image_speed=0;
-image_index = 0;
 image_xscale = turn;
-	
 	
 if(!grabbed)
 {
@@ -41,7 +38,6 @@ if(!grabbed)
 if (place_meeting(x, y, oPlayer)) 
 {
 	speed=0;
-    image_index = 1;
 	rage = true;
     oPlayer.hp -= 0.2;
 	if(oPlayer.hp<160){
@@ -49,12 +45,15 @@ if (place_meeting(x, y, oPlayer))
 	}
 		
 }
+if(!rage){
+sprite_index = sEnemy_A_Attack;
+}
 	
 if(rage)
 {
 rage_timer-=1;
 	if(rage_timer==0){
-	image_index = 0;
+	sprite_index = sEnemy_A;
 	rage_timer=30;
 	rage  = false;
 	}
