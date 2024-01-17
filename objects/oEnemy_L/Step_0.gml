@@ -5,6 +5,7 @@ if (!place_meeting(x, y, oPlayer) and grabbed) {
     grabbed = false;
 }
 
+image_speed=1;
 // Step Event
 if (instance_exists(oPlayer))
 {
@@ -36,6 +37,30 @@ if (instance_exists(oPlayer))
 		        }
 		    }
 		}
+		
+if(prevx<x)
+{
+attack_adjust=32;
+}
+if(prevx>x)
+{
+attack_adjust=-32;
+}
+prevx = x;
+		
+if (place_meeting(x-attack_adjust, y, oPlayer)) 
+{
+	speed=0;
+    sprite_index=sEnemy_L_Attack;
+	image_speed = 1;
+    oPlayer.hp -= 0.4;	
+}
+if (!place_meeting(x-attack_adjust, y, oPlayer)) 
+{
+	speed=2;
+	sprite_index = sEnemy_L;
+}
+
 }
 
 if(dead==true)

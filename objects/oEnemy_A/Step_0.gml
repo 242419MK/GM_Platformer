@@ -7,7 +7,14 @@ if (place_meeting(x, y + vsp2, oWall))
 		}
 		vsp2=0;
 	}
+	
+if (!place_meeting(x+turn*32, y + 1, oWall))
+    {
+
+        turn = -turn;
 		
+    }
+	
 hsp2 = turn * walksp2;
 if (place_meeting(x+hsp2, y, oWall))
 	{
@@ -19,13 +26,6 @@ if (place_meeting(x+hsp2, y, oWall))
 		turn = - turn;
 	}
 	
-jumpcd-=1;
-if(jumpcd<=0){
-	var rand = random(30);
-	var rand2 = random(10);
-y = y - (10 + rand2);
-jumpcd=10+rand;
-}
 
 image_speed=0;
 image_index = 0;

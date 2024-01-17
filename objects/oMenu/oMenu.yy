@@ -1,18 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oWall_enemy_S",
-  "eventList": [],
+  "name": "oMenu",
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+  ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Scene",
-    "path": "folders/Objects/Scene.yy",
+    "name": "UI",
+    "path": "folders/Objects/UI.yy",
   },
-  "parentObjectId": {
-    "name": "oWall",
-    "path": "objects/oWall/oWall.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -28,10 +29,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spwaner",
-    "path": "sprites/spwaner/spwaner.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

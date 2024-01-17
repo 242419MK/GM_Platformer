@@ -24,7 +24,22 @@ else if (state == 1)
 	if(deathcd<=0)
 	{
 	instance_destroy();
-    var reward_instance = instance_create_layer(x, y-50, "Player", reward);
+		for(i=0;i<loot_number;i++)
+		{
+			var value = random(10);
+
+				if(value>=8){
+				reward = oGreenHearth;
+				}
+				else if(value>=4 and value<9)
+				{
+				reward = oBlueHearth;	
+				}
+				else {
+				reward = oRedHearth;
+				}
+		var reward_instance = instance_create_layer(x, y-50, "Player", reward);
+		}
 	}
 }
 

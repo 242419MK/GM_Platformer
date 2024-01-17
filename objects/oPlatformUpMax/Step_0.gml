@@ -20,7 +20,7 @@ if (going_up)
     speed = 2;
 	if (place_meeting(x, y-1, oPlayer)) 
 	{
-		oPlayer.hp -=0.21;
+		oPlayer.hp -=0.2 - 0.5*oPlayer.hp_regen;
     }
     // Check if the platform has reached the initial position
     if (y > spawny) 

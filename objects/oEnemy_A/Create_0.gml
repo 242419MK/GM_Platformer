@@ -2,8 +2,6 @@ hsp2 = 1;
 vsp2 = 0;
 grv2 = 0.7;
 walksp2 = 4;
-jumpcd = 40 + random(30);
-randomize(); // Initialize random number generator
 
 turn =1;
 grabbed = false;

@@ -33,7 +33,7 @@ jump_number     = 2; //How many jumps the player can make
 jump_current    = 0; //How many jumps the player has remaining
 dash_cd = 0;
 
-hp_regen = 0.01;
+hp_regen = 0.1;
 
 grabbing_wall = false;
 mode = 0;
