@@ -17,9 +17,10 @@ attack_damage = 51;
 dash_enabled = false;
 double_jump_enabled = false;
 
-gold = 0;
-silver = 0;
-bronze = 0;
+red_hearths = 0;
+blue_hearths = 0;
+purple_hearths = 0;
+green_hearths = 0;
 
 play = false;
 

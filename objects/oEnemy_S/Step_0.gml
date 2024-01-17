@@ -40,6 +40,6 @@ if (shooting_timer == 0) {
 
 if(dead==true)
 {
-	var reward = instance_create_layer(x, y-50, "Player", oSilverCoin);
+	var reward = instance_create_layer(x, y-50, "Player", oBlueHearth);
 	instance_destroy();
 }

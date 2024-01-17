@@ -66,7 +66,7 @@ if(!place_meeting(x,y+1,oWall))
 		if (play)
 		{
 			image_speed = 1.4;
-		    sprite_index = sPlayerAttack;
+		    sprite_index = sPlayer_attack;
 		    if (image_index >= image_number - 1) 
 			{
 		        play = false; // Set play to false when animation ends
@@ -79,7 +79,15 @@ if(!place_meeting(x,y+1,oWall))
 		//jak bug to trzeba naprawić
 		else 
 		{
-			sprite_index = sPlayerA;
+			if(ammo<maxAmmo)
+			{
+				sprite_index=sPlayer_jump_shooting_hook;
+			}
+			else 
+			{
+				sprite_index = sPlayer_jump;
+			}
+			
 			image_speed = 0;
 			if (sign(vsp) > 0 )
 			{
@@ -101,29 +109,50 @@ if(place_meeting(x,y+1,oWall))
 		if (play)
 		{
 			image_speed = 1.4;
-		    sprite_index = sPlayerAttack;
+		    sprite_index = sPlayer_attack;
 		    if (image_index >= image_number - 1) {
 		        play = false; // Set play to false when animation ends
 		    }
 		}
 		else 
-		{
-			sprite_index = sPlayer;
+		{	
+			if(ammo<maxAmmo)
+			{
+				sprite_index=sPlayer_shooting_hook;
+			}
+			else 
+			{
+				sprite_index = sPlayer;
+			}
 		}
 	}
 	else
 	{
 		if (play)
-		{
+		{		
+			if(ammo<maxAmmo)
+			{
+				sprite_index=sPlayer_attack_shooting_hook;
+			}
+			else 
+			{
+				sprite_index = sPlayer_attack;
+			}
 			image_speed = 1.4;
-		    sprite_index = sPlayerAttack;
 		    if (image_index >= image_number - 1) {
 		        play = false; // Set play to false when animation ends
 		    }
 		}
 		else 
 		{
-			sprite_index = sPlayerR;
+			if(ammo<maxAmmo)
+			{
+				sprite_index=sPlayer_run_shooting_hook;
+			}
+			else 
+			{
+				sprite_index = sPlayer_run;
+			}
 		}
 	}
 }
@@ -135,6 +164,7 @@ if(hsp !=0) image_xscale = sign(hsp);
 //hook
 if (mouse_check_button_pressed(mb_right)) {
 	if(ammo > 0){
+		sprite_index = sPlayer_shooting_hook;
 	    // Stworzenie kuli na pozycji gracza
 	    var bullet = instance_create_layer(x, y, "Player", oBullet);
 

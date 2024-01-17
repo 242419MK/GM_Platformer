@@ -5,14 +5,14 @@ randomize(); // Initialize random number generator
 value = random(10);
 
 if(value>=8){
-reward = oGoldCoin;
+reward = oGreenHearth;
 }
 else if(value>=4 and value<9)
 {
-reward = oSilverCoin;	
+reward = oBlueHearth;	
 }
 else {
-reward = oBronzeCoin;
+reward = oRedHearth;
 }
 
 state = 3;

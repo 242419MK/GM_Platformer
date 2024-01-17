@@ -67,7 +67,7 @@ if (!place_meeting(x, y, oPlayer)and grabbed)
 	
 if(dead==true)
 {
-	var reward = instance_create_layer(x, y-50, "Player", oBronzeCoin);
+	var reward = instance_create_layer(x, y-50, "Player", oRedHearth);
 	instance_destroy();
 }
 

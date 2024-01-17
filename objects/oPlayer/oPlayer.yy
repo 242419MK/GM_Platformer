@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sPlayerAttack",
-    "path": "sprites/sPlayerAttack/sPlayerAttack.yy",
+    "name": "sPlayer_attack",
+    "path": "sprites/sPlayer_attack/sPlayer_attack.yy",
   },
   "spriteMaskId": null,
   "visible": true,
