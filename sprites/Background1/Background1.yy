@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "Background1",
-  "bbox_bottom": 0,
-  "bbox_left": 0,
-  "bbox_right": 0,
+  "bbox_bottom": 479,
+  "bbox_left": 19,
+  "bbox_right": 563,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a5211f1e-8164-4eb6-81eb-3775a6b70149",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"8bac5c99-bcf6-40fc-8741-8a76606fb759",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 480,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c0700cc0-3cec-43ad-b221-c4f1a70806db","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c28bde9c-7a0a-49d5-9757-d33eabeac934","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 4,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a5211f1e-8164-4eb6-81eb-3775a6b70149","path":"sprites/Background1/Background1.yy",},},},"Disabled":false,"id":"120a5d65-a17e-4538-b1ee-aee6cef38e23","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"8bac5c99-bcf6-40fc-8741-8a76606fb759","path":"sprites/Background1/Background1.yy",},},},"Disabled":false,"id":"33ee08c7-0c72-48a8-846d-3ddb306bd6eb","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
