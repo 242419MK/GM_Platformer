@@ -1,3 +1,5 @@
+image_angle +=1;
+
 if (place_meeting(x, y, oWall)) or (death_timer == 0) {
     instance_destroy();
 }

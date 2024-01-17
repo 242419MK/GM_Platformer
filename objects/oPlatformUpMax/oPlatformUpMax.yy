@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sPlatform",
-    "path": "sprites/sPlatform/sPlatform.yy",
+    "name": "sPlatform_max_up",
+    "path": "sprites/sPlatform_max_up/sPlatform_max_up.yy",
   },
   "spriteMaskId": null,
   "visible": true,

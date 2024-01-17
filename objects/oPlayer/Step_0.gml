@@ -8,6 +8,8 @@ hsp = move * walksp;
 dash_cd-=1;
 vsp += grv;
 
+round_time-=1;
+
 	if(double_jump_enabled)
 		{
 		if(keyboard_check_pressed(vk_space) && jump_current > 0)
@@ -88,17 +90,19 @@ if(!place_meeting(x,y+1,oWall))
 				sprite_index = sPlayer_jump;
 			}
 			
-			image_speed = 0;
-			if (sign(vsp) > 0 )
+			if(!place_meeting(x,y+1,oPlatformUpMax))
 			{
-				image_index = 1; 
+				image_speed = 0;
+				if (sign(vsp) > 0 )
+				{
+					image_index = 0; 
+				}
+				else
+				{
+					image_index = 0;
+				} 
 			}
-			else
-			{
-				image_index = 0;
-			} 
 		}
-
 }
 
 if(place_meeting(x,y+1,oWall))

@@ -37,3 +37,5 @@ hp_regen = 0.01;
 
 grabbing_wall = false;
 mode = 0;
+
+round_time = 18000;
