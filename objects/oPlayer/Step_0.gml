@@ -8,7 +8,15 @@ hsp = move * walksp;
 dash_cd-=1;
 vsp += grv;
 
+if(round_time>0)
+{
 round_time-=1;
+}
+else 
+{
+overtime+=1;
+}
+
 
 	if(double_jump_enabled)
 		{
@@ -207,7 +215,9 @@ if (mouse_check_button_pressed(mb_left) && attack_cd <= 0) {
 		if(hitted_enemy.hp<0)
 		{
 		hitted_enemy.dead=true;
-		} 
+		Shake(6,10);
+		if(hp<maxhp-5){hp +=5;}
+		}
     }
 	
 	 var hitted_chest = noone; // Initialize to no enemy hitted

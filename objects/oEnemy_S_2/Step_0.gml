@@ -14,7 +14,7 @@ if (place_meeting(x, y + vsp2, oWall))
 if (place_meeting(x, y, oPlayer)) {
     speed = 0;
     rage = true;
-    oPlayer.hp -= 1;
+    oPlayer.hp -= 0.2;
     if (oPlayer.hp < 160) {
         oPlayer.damaged = true;
     }

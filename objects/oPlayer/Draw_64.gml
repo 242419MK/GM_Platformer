@@ -25,14 +25,32 @@ draw_text(150, 10, "Hearths: " + string(hearths_number));
 var time_M = floor(oPlayer.round_time /60 / 60); // Zaokrąglamy w dół do pełnych minut
 var time_S = floor(oPlayer.round_time /60  % 60); // Reszta to sekundy
 
+var money = cash;
+draw_text(300, 10, "$: " + string(money));
+var timeO_M = floor(oPlayer.overtime /60 / 60); // Zaokrąglamy w dół do pełnych minut
+var timeO_S = floor(oPlayer.overtime /60  % 60); // Reszta to sekundy
 // Formatujemy tekst
 var time_text ="Round time: " +  string(time_M) + ":" + string(time_S); // Dodajemy zero przed sekundy, jeśli są jednocyfrowe
+var time_text2 ="Over time! : " +  string(timeO_M) + ":" + string(timeO_S); // Dodajemy zero przed sekundy, jeśli są jednocyfrowe
 
-// Ustawiamy kolor i rozmiar czcionki
+if(overtime<=0){
 draw_set_color(c_black);
-
-// Rysujemy tekst w pozycji (x, y)
 draw_text(400, 10, time_text);
+}
+else
+{
+draw_set_color(c_red);
+draw_text(400, 10, time_text2);
+}
+
+
+
+draw_set_color(c_white);
+
+var ammunation = ammo;
+draw_text(800, 10,"Ammo:" + string(ammunation));
+
+
 
 // Reset the draw color
 draw_set_color(c_white);

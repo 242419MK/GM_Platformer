@@ -53,7 +53,7 @@ if (place_meeting(x-attack_adjust, y, oPlayer))
 	speed=0;
     sprite_index=sEnemy_L_Attack;
 	image_speed = 1;
-    oPlayer.hp -= 0.4;	
+    oPlayer.hp -= 1;	
 }
 if (!place_meeting(x-attack_adjust, y, oPlayer)) 
 {

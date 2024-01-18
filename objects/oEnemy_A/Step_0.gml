@@ -39,7 +39,7 @@ if (place_meeting(x, y, oPlayer))
 {
 	speed=0;
 	rage = true;
-    oPlayer.hp -= 0.2;
+    oPlayer.hp -= 0.4;
 	if(oPlayer.hp<160){
 	oPlayer.damaged=true;
 	}

@@ -21,6 +21,7 @@ red_hearths = 0;
 blue_hearths = 0;
 purple_hearths = 0;
 green_hearths = 0;
+cash = 0;
 
 play = false;
 
@@ -39,3 +40,4 @@ grabbing_wall = false;
 mode = 0;
 
 round_time = 18000;
+overtime = 0;
