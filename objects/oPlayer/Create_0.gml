@@ -14,8 +14,8 @@ damaged = false;
 attack_range = 80;
 attack_damage = 51;
 
-dash_enabled = false;
-double_jump_enabled = false;
+dash_enabled = true;
+double_jump_enabled = true;
 
 red_hearths = 0;
 blue_hearths = 0;
@@ -32,7 +32,9 @@ key_jump = keyboard_check_pressed(vk_space);
 
 jump_number     = 2; //How many jumps the player can make
 jump_current    = 0; //How many jumps the player has remaining
+dash_max_cd = 300;
 dash_cd = 0;
+dash_length = 50;
 
 hp_regen = 0.1;
 
@@ -41,3 +43,6 @@ mode = 0;
 
 round_time = 18000;
 overtime = 0;
+
+deadcounter=0;
+gui_couinter = 0;

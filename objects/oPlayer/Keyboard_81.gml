@@ -1,7 +1,7 @@
 /// @description special abilities (potem beda jako osobno umiejki)
 
 //hook and jump mode changing
-
+/*
 if (keyboard_check_pressed(ord("Q"))) {
     mode +=1;
 	//for tests
@@ -17,4 +17,4 @@ if (keyboard_check_pressed(ord("Q"))) {
 	if(mode==2)mode=0;
 }
 
-
+*/

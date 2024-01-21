@@ -12,7 +12,10 @@
     "name": "Hearths",
     "path": "folders/Objects/Hearths.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oHearth",
+    "path": "objects/oHearth/oHearth.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

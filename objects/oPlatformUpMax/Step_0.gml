@@ -31,7 +31,14 @@ if (going_up)
 }
 y += speed;
 
+// Move player with the platform
 if (place_meeting(x, y, oPlayer))
 {
-		oPlayer.y +=speed;
+    oPlayer.y += speed;
 }
+
+if (place_meeting(x, y, oHearth))
+{
+    oHearth.y += speed;
+}
+

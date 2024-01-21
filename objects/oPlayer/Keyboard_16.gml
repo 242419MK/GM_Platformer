@@ -8,27 +8,31 @@ if(dash_enabled)
 			{
 			if(key_left)
 				{
-					x=x-50;
+					x=x-dash_length;
+					dash_cd=dash_max_cd;
+					
 					if(place_meeting(x,y,oWall))
 					{
-						while(!place_meeting(x,y,oWall))
+						while(place_meeting(x,y,oWall))
 						{
 						x=x-1;
 						}
 					}
 				}
+			
 			else if(key_right)
 				{
-					x=x+50;
+					x=x+dash_length;
+					dash_cd=dash_max_cd;
 					if(place_meeting(x,y,oWall))
 					{
-						while(!place_meeting(x,y,oWall))
+						while(place_meeting(x,y,oWall))
 						{
 						x=x+1;
 						}
 					}
 				}
-			dash_cd=300;
+			
 			}	
 		}
 }

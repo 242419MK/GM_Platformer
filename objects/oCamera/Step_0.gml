@@ -39,7 +39,20 @@ if(layer_exists("Background2"))
 	layer_x("Background2",x/3);
 }
 
+
 if(layer_exists("Background3"))
 {
 	layer_x("Background3",x/4);
 }
+
+
+if(layer_exists("Instances_1"))
+{
+	layer_x("Instances_1",x/3);
+}
+
+if(layer_exists("Instances_2"))
+{
+	layer_x("Instances_2",x/4);
+}
+

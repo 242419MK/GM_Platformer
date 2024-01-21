@@ -6,6 +6,7 @@ key_jump = keyboard_check_pressed(vk_space);
 var move = key_right - key_left;
 hsp = move * walksp;
 dash_cd-=1;
+gui_couinter+=1;
 vsp += grv;
 
 if(round_time>0)
@@ -235,7 +236,20 @@ if (mouse_check_button_pressed(mb_left) && attack_cd <= 0) {
 
 
 if(hp<0){
-instance_destroy(oPlayer);
+walksp=0;
+hp_regen=0;
+
+sprite_index = sPlayer_dead;
+image_speed=0;
+image_index=deadcounter;
+deadcounter+=0.25;
+
+if (deadcounter >= 20) 
+	{
+		instance_destroy(oPlayer);
+		//przeniesienie do menu
+	}
+
 }
 
 if(hp<maxhp)hp = hp + hp_regen;
