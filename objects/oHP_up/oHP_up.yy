@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "UI",
-    "path": "folders/Objects/UI.yy",
+    "name": "Upgrades",
+    "path": "folders/Objects/UI/Upgrades.yy",
   },
   "parentObjectId": null,
   "persistent": false,

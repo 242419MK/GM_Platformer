@@ -9,7 +9,10 @@
     "name": "Background2",
     "path": "folders/Objects/Background2.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oBG",
+    "path": "objects/oBG/oBG.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

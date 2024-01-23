@@ -29,30 +29,19 @@ if (keyboard_check_pressed(vk_escape)) {
     game_end(); // This function will end the game
 }
 
-if(layer_exists("Background1"))
+if(layer_exists("Mecha_columns"))
 {
-	layer_x("Background1",x/2);
-}
-
-if(layer_exists("Background2"))
-{
-	layer_x("Background2",x/3);
+	layer_x("Mecha_columns",x/2);
 }
 
 
-if(layer_exists("Background3"))
+if(layer_exists("Black_columns"))
 {
-	layer_x("Background3",x/4);
+	layer_x("Black_columns",x/3);
 }
 
 
-if(layer_exists("Instances_1"))
+if(layer_exists("Backgrounds_1"))
 {
-	layer_x("Instances_1",x/3);
+	layer_x("Backgrounds_1",x/4);
 }
-
-if(layer_exists("Instances_2"))
-{
-	layer_x("Instances_2",x/4);
-}
-
