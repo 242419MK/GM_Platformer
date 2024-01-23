@@ -41,7 +41,22 @@ if(layer_exists("Black_columns"))
 }
 
 
+
+
+
+if(layer_exists("Background2_old"))
+{
+	layer_x("Background2_old",x/(b1speed));
+}
+
+
+if(layer_exists("Background_blank"))
+{
+	layer_x("Background_blank",x/(b2speed));
+}
+
+
 if(layer_exists("Backgrounds_1"))
 {
-	layer_x("Backgrounds_1",x/4);
+	layer_x("Backgrounds_1",x/(b3speed));
 }
