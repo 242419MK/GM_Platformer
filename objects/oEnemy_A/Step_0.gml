@@ -67,11 +67,30 @@ if (!place_meeting(x, y, oPlayer)and grabbed)
 if(dead==true)
 {
 	var reward = instance_create_layer(x, y-50, "Player", oRedHearth);
+	if(better_reward)
+	{
+		var reward2 = instance_create_layer(x-20, y-40, "Player", oRedHearth);
+	}
 	instance_destroy();
 }
 
-if(timeEnds==true)
+if(instance_exists(oPlayer))
 {
-	direction = point_direction(x, y, oPlayer.x, oPlayer.y);
-	
+if(timeEnds)
+	{
+		speed = 3;
+		direction = point_direction(x,y, oPlayer.x, oPlayer.y)
+		jump = true;
+	}
+}
+
+if(jump)
+{
+	jump_timer--;
+	if(jump_timer<=0)
+	{
+		jump_height = random_range(30, 60);
+		y -= jump_height
+		jump_timer = random_range(90, 180);
+	}
 }

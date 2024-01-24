@@ -4,6 +4,12 @@ if (place_meeting(x, y, oWall)) or (death_timer == 0) {
     instance_destroy();
 }
 
+if(timeEnds==true)
+{
+	speed = 8;
+	death_timer = 10;
+}
+
 death_timer -= 1;
 
 if (!place_meeting(x, y, oPlayer)) {
@@ -13,9 +19,5 @@ if (!place_meeting(x, y, oPlayer)) {
     speed = 0;
     death_timer = 0;
     oPlayer.hp -= 10;
-
-    if (oPlayer.hp < 160) {
-        oPlayer.damaged = true;
-    }
 }
 

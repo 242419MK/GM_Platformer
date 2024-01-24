@@ -6,11 +6,14 @@ if (!place_meeting(x, y, oPlayer) and grabbed) {
 }
 
 image_speed=1;
-// Step Event
+
+
 if (instance_exists(oPlayer))
 {
-	var distance_to_spawn = point_distance(x, y, spawnpoint_x, spawnpoint_y);
-	var distance_to_player = point_distance(x, y, oPlayer.x, oPlayer.y);
+	if(timeEnds==false)
+	{
+		var distance_to_spawn = point_distance(x, y, spawnpoint_x, spawnpoint_y);
+		var distance_to_player = point_distance(x, y, oPlayer.x, oPlayer.y);
 		// Check if the player is within the enemy's range
 		if (distance_to_player < player_range) {
 		    // Move smoothly towards the player
@@ -37,7 +40,14 @@ if (instance_exists(oPlayer))
 		        }
 		    }
 		}
-		
+	}
+if(timeEnds==true)
+	{
+		direction = point_direction(x, y, oPlayer.x, oPlayer.y);
+		speed = rage_speed;
+	}
+}
+
 if(prevx<x)
 {
 attack_adjust=32;
@@ -47,7 +57,7 @@ if(prevx>x)
 attack_adjust=-32;
 }
 prevx = x;
-		
+
 if (place_meeting(x-attack_adjust, y, oPlayer)) 
 {
 	speed=0;
@@ -57,14 +67,21 @@ if (place_meeting(x-attack_adjust, y, oPlayer))
 }
 if (!place_meeting(x-attack_adjust, y, oPlayer)) 
 {
-	speed=2;
+	if(!timeEnds)
+	{
+	speed=2;	
+	}
 	sprite_index = sEnemy_L;
-}
-
 }
 
 if(dead==true)
 {
 	var reward = instance_create_layer(x, y-50, "Player", oGreenHearth);
+	if(better_reward)
+	{
+		var reward2 = instance_create_layer(x-20, y-40, "Player", oGreenHearth);
+		var reward3 = instance_create_layer(x+20, y-40, "Player", oGreenHearth);
+	}
 	instance_destroy();
 }
+

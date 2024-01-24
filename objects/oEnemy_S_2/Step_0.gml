@@ -51,7 +51,7 @@ if (shooting_timer <= 0) {
 				if(oPlayer.x<oEnemy_S_2.x){adjust = -32;}
 				else {adjust = 32;}
 		        var bullet = instance_create_layer(x+adjust, y, "Enemies", oEnemy_Bullet_Big);
-
+				if(timeEnds==true){bullet.timeEnds=true;}
 		        // Calculate the direction for each bullet
 		        var bulletDirection = point_direction(x, y, oPlayer.x + random_range(-8, 8), oPlayer.y + random_range(-8, 8));
 
@@ -64,6 +64,7 @@ if (shooting_timer <= 0) {
 				bullet.direction = bulletDirection;	
 		    }
 			 shooting_timer = 120; // Reset the timer for the next shot
+			 if(timeEnds==true){shooting_timer = 60;}
 		}
 	}
    
@@ -72,5 +73,10 @@ if (shooting_timer <= 0) {
 if(dead==true)
 {
 	var reward = instance_create_layer(x, y-50, "Player", oPurpleHearth);
+	if(better_reward)
+	{
+		var reward2 = instance_create_layer(x-20, y-40, "Player", oPurpleHearth);
+		var reward3 = instance_create_layer(x+20, y-40, "Player", oPurpleHearth);
+	}
 	instance_destroy();
 }

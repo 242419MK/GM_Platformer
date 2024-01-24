@@ -18,6 +18,26 @@ else
 overtime+=1;
 }
 
+if(overtime>0)
+{
+	oEnemy_S.timeEnds = true;
+	oEnemy_S_2.timeEnds = true;
+}
+
+if(overtime>=1200
+){
+	oEnemy_L.timeEnds = true;
+}
+
+if(overtime>=3600)
+{
+	oEnemy_A.timeEnds = true;
+	oEnemy_A.better_reward=true;
+	oEnemy_S.better_reward=true;
+	oEnemy_S_2.better_reward=true;
+	oEnemy_L.better_reward=true;
+}
+
 
 	if(double_jump_enabled)
 		{

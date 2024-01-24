@@ -11,8 +11,3 @@ shake_length = 0;
 shake_magnitude = 0;
 buff = 32;
 
-unit = 1;
-b1speed = 1;
-b2speed = 1;
-b3speed = 1;
-

@@ -29,34 +29,28 @@ if (keyboard_check_pressed(vk_escape)) {
     game_end(); // This function will end the game
 }
 
-if(layer_exists("Mecha_columns"))
+
+
+
+if(layer_exists("robo_columns"))
 {
-	layer_x("Mecha_columns",x/2);
+	layer_x("robo_columns",x/2);
 }
 
 
-if(layer_exists("Black_columns"))
+if(layer_exists("swarns"))
 {
-	layer_x("Black_columns",x/3);
+	layer_x("swarns",x/3);
 }
 
 
-
-
-
-if(layer_exists("Background2_old"))
+if(layer_exists("black_towers_and_swarns"))
 {
-	layer_x("Background2_old",x/(b1speed));
-}
-
-
-if(layer_exists("Background_blank"))
-{
-	layer_x("Background_blank",x/(b2speed));
+	layer_x("black_towers_and_swarns",x/3);
 }
 
 
 if(layer_exists("Backgrounds_1"))
 {
-	layer_x("Backgrounds_1",x/(b3speed));
+	layer_x("Backgrounds_1",x/5);
 }

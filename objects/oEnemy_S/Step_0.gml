@@ -53,9 +53,15 @@ if (shooting_timer <= 0) {
 			var adjust = 0;
 			if(oPlayer.x<oEnemy_S.x){adjust = -32;}
 				else {adjust = 32;}
+			
             var bullet = instance_create_layer(x+adjust, y, "Enemies", oEnemy_Bullet);
+			if(timeEnds==true){bullet.timeEnds=true;}
         }
-		shooting_timer = 120;
+			shooting_timer = 120;
+		if(timeEnds)
+		{
+			shooting_timer = 60;
+		}
     }
     
 }
@@ -64,5 +70,11 @@ if (shooting_timer <= 0) {
 if(dead==true)
 {
 	var reward = instance_create_layer(x, y-50, "Player", oBlueHearth);
+	if(better_reward)
+	{
+		var reward2 = instance_create_layer(x-20, y-40, "Player", oBlueHearth);
+		var reward3 = instance_create_layer(x+20, y-40, "Player", oBlueHearth);
+	}
 	instance_destroy();
 }
+

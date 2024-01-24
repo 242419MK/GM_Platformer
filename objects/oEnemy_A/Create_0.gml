@@ -15,3 +15,8 @@ fullHp = 100;
 hp = fullHp;
 
 timeEnds=false;
+better_reward = false;
+
+jump = false;
+jump_height = 0;
+jump_timer = 0;

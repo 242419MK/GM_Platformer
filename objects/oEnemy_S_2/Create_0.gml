@@ -9,3 +9,6 @@ shooting_timer = 120
 dead=false;
 fullHp = 100; 
 hp = fullHp;
+
+timeEnds=false;
+better_reward = false;

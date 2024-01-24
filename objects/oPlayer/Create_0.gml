@@ -41,7 +41,7 @@ hp_regen = 0.1;
 grabbing_wall = false;
 mode = 0;
 
-round_time = 18000;
+round_time = 600;//18000;
 overtime = 0;
 
 deadcounter=0;

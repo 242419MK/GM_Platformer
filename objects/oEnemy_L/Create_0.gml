@@ -15,8 +15,13 @@ max_range = 500; // Maximum distance from spawn point
 player_range = 300; // Distance to start following the player
 follow_speed = 0.1; // Smoothing factor for following the player
  
- prevx = x;
- attack_adjust = 0;
+prevx = x;
+attack_adjust = 0;
 fullHp = 200;
 hp = fullHp;
 dead=false;
+
+timeEnds = false;
+better_reward = false;
+
+rage_speed = 3;
