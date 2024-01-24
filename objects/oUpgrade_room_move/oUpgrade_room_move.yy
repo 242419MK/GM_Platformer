@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oHP_up",
+  "name": "oUpgrade_room_move",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Upgrades",
-    "path": "folders/Objects/UI/Upgrades.yy",
+    "name": "Scene",
+    "path": "folders/Objects/Scene.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sHP_UP",
-    "path": "sprites/sHP_UP/sHP_UP.yy",
+    "name": "sUpgrade_room_move",
+    "path": "sprites/sUpgrade_room_move/sUpgrade_room_move.yy",
   },
   "spriteMaskId": null,
   "visible": true,

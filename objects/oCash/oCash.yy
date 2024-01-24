@@ -1,16 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oHP_up",
+  "name": "oCash",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Upgrades",
-    "path": "folders/Objects/UI/Upgrades.yy",
+    "name": "Player",
+    "path": "folders/Objects/Player.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -28,10 +27,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "sHP_UP",
-    "path": "sprites/sHP_UP/sHP_UP.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

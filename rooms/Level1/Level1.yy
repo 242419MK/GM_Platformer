@@ -730,6 +730,7 @@
     {"name":"inst_1B0BD61E","path":"rooms/Level1/Level1.yy",},
     {"name":"inst_883B6FD","path":"rooms/Level1/Level1.yy",},
     {"name":"inst_48DA5A42","path":"rooms/Level1/Level1.yy",},
+    {"name":"inst_1920319B","path":"rooms/Level1/Level1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -1183,6 +1184,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2681812A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oChest","path":"objects/oChest/oChest.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":7840.0,"y":288.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6E969375","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oWall","path":"objects/oWall/oWall.yy",},"properties":[],"rotation":0.0,"scaleX":73.999985,"scaleY":3.5,"x":6064.0,"y":0.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_664343A3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oWall_END","path":"objects/oWall_END/oWall_END.yy",},"properties":[],"rotation":0.0,"scaleX":6.0,"scaleY":2.5,"x":3584.0,"y":80.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1920319B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oUpgrade_room_move","path":"objects/oUpgrade_room_move/oUpgrade_room_move.yy",},"properties":[],"rotation":0.0,"scaleX":5.0,"scaleY":2.0,"x":3584.0,"y":64.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRLayer","resourceVersion":"1.0","name":"BG1","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
         {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"robo_columns","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

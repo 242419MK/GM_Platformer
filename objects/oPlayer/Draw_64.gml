@@ -54,6 +54,8 @@ var timeO_S = floor(oPlayer.overtime /60  % 60); // Reszta to sekundy
 var time_text ="Round time: " +  string(time_M) + ":" + string(time_S); // Dodajemy zero przed sekundy, jeśli są jednocyfrowe
 var time_text2 ="Over time! : " +  string(timeO_M) + ":" + string(timeO_S); // Dodajemy zero przed sekundy, jeśli są jednocyfrowe
 
+
+
 if(overtime<=0){
 draw_set_color(c_black);
 draw_text(300, textY, time_text);
@@ -61,11 +63,16 @@ draw_text(300, textY, time_text);
 else
 {
 draw_set_color(c_red);
-draw_text(300, 8, time_text2);
+draw_text(300, textY, time_text2);
 }
 
+draw_set_color(darker_gray);
+if(room=Upgrades)
+{
+draw_rectangle(270, 0, 700, 25, false); //round time
+}
 
-
+draw_set_color(c_black);
 var jump = "chuj";
 if(oPlayer.double_jump_enabled==true){jump="enabled";}
 else {jump="disabled"};
