@@ -11,18 +11,21 @@ if (place_meeting(x, y + vsp2, oWall))
 	}
 	
 //Attack enemy in close range
-if (place_meeting(x, y, oPlayer)) {
+if (place_meeting(x, y, oPlayer) && instance_exists(oPlayer)) 
+{
     speed = 0;
     rage = true;
-    oPlayer.hp -= 0.2;
+    oPlayer.hp -= damage/ oPlayer.armor;
     if (oPlayer.hp < 160) {
         oPlayer.damaged = true;
     }
 }
 
-if (rage) {
+if (rage) 
+{
     rage_timer -= 1;
-    if (rage_timer == 0) {
+    if (rage_timer == 0) 
+	{
 		image_speed = 2;
         sprite_index = sEnemy_S_Attack_S2;
         rage_timer = 30;
@@ -38,7 +41,8 @@ if (rage) {
 // Shooting logic for the child object
 
 shooting_timer -= 1;
-if (shooting_timer <= 0) {
+if (shooting_timer <= 0) 
+{
 	sprite_index = sEnemy_S_Attack_S2;
     // Your custom shooting logic for the child object
 	if (instance_exists(oPlayer)&& point_distance(x, y, oPlayer.x, oPlayer.y) < 500)
@@ -57,9 +61,9 @@ if (shooting_timer <= 0) {
 
 		        // Slightly adjust the direction for the second and third bullets
 		        if (i == 1) {
-		            bulletDirection += 15; // Adjust as needed
+		            bulletDirection += 22; // Adjust as needed
 		        } else if (i == 2) {
-		            bulletDirection -= 15; // Adjust as needed
+		            bulletDirection -= 22; // Adjust as needed
 		        }
 				bullet.direction = bulletDirection;	
 		    }

@@ -15,7 +15,7 @@ cash4 = oPlayer.green_hearths * 4.02;
 
 cash = cash+cash2+cash3+cash3;
 
-oPlayer.cash = cash;
+oPlayer.cash = oPlayer.cash + cash ;
 
 oPlayer.red_hearths=0;
 oPlayer.blue_hearths=0;

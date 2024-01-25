@@ -3,6 +3,6 @@
 
 transactionCompleted = false;
 
-
+price = 20;
 
 

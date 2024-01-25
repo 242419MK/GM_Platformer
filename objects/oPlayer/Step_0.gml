@@ -8,20 +8,37 @@ hsp = move * walksp;
 dash_cd-=1;
 gui_couinter+=1;
 vsp += grv;
+hood_cd--;
+if(hood_cd<=0)
+{
+	hood_cd=0;
+}
 
+if(oPlayer.x>room_width)
+{
+	oPlayer.x=room_width-200;
+}
+
+if(oPlayer.x<0)
+{
+	oPlayer.x=200;
+}
+		
+		
 if(round_time>0)
 {
-round_time-=1;
+	round_time-=1;
 }
 else 
 {
-overtime+=1;
+	overtime+=1;
 }
 
 if(instance_exists(oEnemy))
 {
 	if(overtime>0)
 	{
+		oPlatformUpMax.speed_value = 3;
 		oEnemy_S.timeEnds = true;
 		oEnemy_S_2.timeEnds = true;
 	}
@@ -41,43 +58,67 @@ if(instance_exists(oEnemy))
 	}
 }
 
-	if(double_jump_enabled)
+//jumps
+if(double_jump_enabled)
+	{
+	if(keyboard_check_pressed(vk_space) && jump_current > 0)
 		{
-		if(keyboard_check_pressed(vk_space) && jump_current > 0)
+			vsp = jump_height;
+			jump_current--;
+		}
+	if(place_meeting(x, y + vsp, oWall))
+		{
+			while(!place_meeting(x, y + sign(vsp), oWall))
 			{
-				vsp = -15;
-				jump_current--;
+				y += sign(vsp);
 			}
-		if(place_meeting(x, y + vsp, oWall))
-			{
-				while(!place_meeting(x, y + sign(vsp), oWall))
+				if(vsp > 0)
 				{
-				    y += sign(vsp);
+					jump_current = jump_number;
 				}
-					if(vsp > 0)
-					{
-					    jump_current = jump_number;
-					}
-				vsp = 0;
-			}
-			y = y + vsp;
-			}
-	else {
-		if (place_meeting(x, y + 1 , oWall)) && (key_jump)
-			{
-				vsp = -15;
-			}
-		if (place_meeting(x, y + vsp, oWall))
-		{
-			while(!place_meeting(x, y+sign(vsp), oWall))
-			{
-				y = y + sign(vsp);
-			}
 			vsp = 0;
 		}
 		y = y + vsp;
+		}
+else {
+	if (place_meeting(x, y + 1 , oWall)) && (key_jump)
+		{
+			vsp = jump_height;
+		}
+	if (place_meeting(x, y + vsp, oWall))
+	{
+		while(!place_meeting(x, y+sign(vsp), oWall))
+		{
+			y = y + sign(vsp);
+		}
+		vsp = 0;
 	}
+	y = y + vsp;
+}
 
+
+if (place_meeting(x, y + 1, oWall))
+{
+    if (key_jump && jump_pressed_time == -1)
+    {
+        // Space key is pressed for the first time
+        jump_pressed_time = current_time;
+    }
+
+    if (keyboard_check(vk_space) && jump_pressed_time != -1)
+    {
+        // Space key is being held down
+        var jump_duration = current_time - jump_pressed_time;
+        
+        // Calculate jump height based on how long the space key is held down
+        vsp = jump_height * (1 - jump_duration / max_jump_duration);
+    }
+    else
+    {
+        // Reset the jump_pressed_time when the space key is released
+        jump_pressed_time = -1;
+    }
+}
 
 //horizontal movement and collisions
 if (place_meeting(x+hsp, y, oWall))
@@ -197,12 +238,13 @@ if(hsp !=0) image_xscale = sign(hsp);
 
 
 //hook
-if (mouse_check_button_pressed(mb_right)) {
+if (mouse_check_button_pressed(mb_right) && hood_cd<=0) {
 	if(ammo > 0){
 		sprite_index = sPlayer_shooting_hook;
 	    // Stworzenie kuli na pozycji gracza
 	    var bullet = instance_create_layer(x, y, "Player", oBullet);
-
+		bullet.hook_speed = oPlayer.hook_speed_bonus;
+		bullet.destroy_timer += oPlayer.hook_long_bonus;
 	    var start_x = x;
 	    var start_y = y;
 	    var dir = point_direction(start_x, start_y, oCrosshair.x, oCrosshair.y);
@@ -269,7 +311,7 @@ deadcounter+=0.25;
 if (deadcounter >= 20) 
 	{
 		instance_destroy(oPlayer);
-		//przeniesienie do menu
+		room_goto(Menu)
 	}
 
 }

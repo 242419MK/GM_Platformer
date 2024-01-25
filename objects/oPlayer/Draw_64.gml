@@ -12,7 +12,7 @@ draw_rectangle(0, 0, 960, 30, false); //interface rectangle
 draw_set_color(middle_gray);
 draw_rectangle(5, 7, 76, 25, false);    //hp
 draw_rectangle(110, 7, 170, 25, false); //hearths
-draw_rectangle(200, 7, 242, 25, false); //cash
+draw_rectangle(200, 7, 280, 25, false); //cash
 draw_rectangle(490, 7, 690, 25, false); //double jump info
 draw_rectangle(740, 7, 880, 25, false); //dash info
 draw_rectangle(900, 7, 970, 25, false); //ammo
@@ -23,6 +23,7 @@ draw_rectangle(290, 7, 455, 25, false); //round time
 
 draw_set_color(c_black);
 
+draw_set_font(fArial12);
 
 var rounded_hp = round(oPlayer.hp / 10) * 10;
 draw_text(10, textY, "HP: " + string(rounded_hp));
@@ -69,19 +70,19 @@ draw_text(300, textY, time_text2);
 draw_set_color(darker_gray);
 if(room=Upgrades)
 {
-draw_rectangle(270, 0, 700, 25, false); //round time
+draw_rectangle(270, 0, 480, 25, false); //round time
 }
 
 draw_set_color(c_black);
 var jump = "chuj";
-if(oPlayer.double_jump_enabled==true){jump="enabled";}
-else {jump="disabled"};
+if(oPlayer.double_jump_enabled==true){jump="active";}
+else {jump="inactive"};
 draw_text(500, textY, "Double jump: " + jump);
 
 
 var dash = "chuj";
-if(oPlayer.dash_enabled==true){dash="enabled";}
-else {dash="disabled"};
+if(oPlayer.dash_enabled==true){dash="active";}
+else {dash="inactive"};
 draw_text(750, textY, "Dash: " + dash);
 
 

@@ -50,20 +50,20 @@ if(timeEnds==true)
 
 if(prevx<x)
 {
-attack_adjust=32;
+	attack_adjust=32;
 }
 if(prevx>x)
 {
-attack_adjust=-32;
+	attack_adjust=-32;
 }
 prevx = x;
 
-if (place_meeting(x-attack_adjust, y, oPlayer)) 
+if (place_meeting(x-attack_adjust, y, oPlayer) && instance_exists(oPlayer)) 
 {
 	speed=0;
     sprite_index=sEnemy_L_Attack;
 	image_speed = 1;
-    oPlayer.hp -= 1;	
+    oPlayer.hp -= damage/ oPlayer.armor;	
 }
 if (!place_meeting(x-attack_adjust, y, oPlayer)) 
 {

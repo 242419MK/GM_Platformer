@@ -24,6 +24,14 @@ else if (state == 1)
 	if(deathcd<=0)
 	{
 	instance_destroy();
+		if(instance_exists(oPlayer))
+		{
+			if(oPlayer.overtime>3600 && !buffed)
+			{
+				loot_number = loot_number*2;
+				buffed = true;
+			}
+		}
 		for(i=0;i<loot_number;i++)
 		{
 			var value = random(10);

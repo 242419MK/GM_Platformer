@@ -18,6 +18,6 @@ if (!place_meeting(x, y, oPlayer)) {
 } else {
     speed = 0;
     death_timer = 0;
-    oPlayer.hp -= 10;
+    oPlayer.hp -= damage/oPlayer.armor;
 }
 

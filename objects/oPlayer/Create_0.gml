@@ -10,18 +10,23 @@ hp = maxhp;
 attack_cd = 30; // Initial attack speed in frames per second
 attack_cd_max = 30; // Initial attack speed in frames per second
 
+hood_cd=10;
 damaged = false;
 attack_range = 80;
 attack_damage = 51;
+hp_regen = 0.01;
+armor = 1;
 
-dash_enabled = true;
-double_jump_enabled = true;
+
+dash_enabled = false;
+double_jump_enabled = false;
+jump_height = -18;
 
 red_hearths = 0;
 blue_hearths = 0;
 purple_hearths = 0;
 green_hearths = 0;
-cash = 0;
+cash = 500;
 
 play = false;
 
@@ -30,18 +35,20 @@ key_right = keyboard_check(ord("D"));
 key_jump = keyboard_check_pressed(vk_space);
 
 
-jump_number     = 2; //How many jumps the player can make
-jump_current    = 0; //How many jumps the player has remaining
+jump_number = 2; //How many jumps the player can make
+jump_current = 0; //How many jumps the player has remaining
+
 dash_max_cd = 300;
 dash_cd = 0;
 dash_length = 50;
 
-hp_regen = 0.1;
-
 grabbing_wall = false;
+hook_speed_bonus = 0;
+hook_long_bonus = 0;
 mode = 0;
 
-round_time = 600;//18000;
+round_time = 18000; //600 = 10s dla testow 
+round_time_bonus = 0;
 overtime = 0;
 
 deadcounter=0;

@@ -19,7 +19,7 @@ if (!direction_set and instance_exists(oPlayer))
 {
     // Kierunek ruchu kuli w momencie utworzenia (stały)
     direction = point_direction(x, y, oCrosshair.x, oCrosshair.y);
-    speed = 10;
+    speed = 10 + speed_bonus;
     direction_set = true;
 }
 
@@ -28,7 +28,7 @@ if (place_meeting(x, y, oWall))
 {	
 	 if (instance_exists(oPlayer))
 	 {
-		speed = 10;
+		speed = 10 + speed_bonus;
 		direction = point_direction(x, y, oPlayer.x, oPlayer.y); // Change direction to player
 	 }
 } 
@@ -50,7 +50,7 @@ else {
 		        attached_enemy.original_direction = attached_enemy.direction; // Store the original direction
 			}
 	        // Uruchomienie mechaniki przyciągania wroga do gracza
-	        attached_enemy.speed = 10; // Prędkość przyciągania wroga (możesz dostosować)
+	        attached_enemy.speed = 10 + speed_bonus; // Prędkość przyciągania wroga (możesz dostosować)
 	        attached_enemy.direction = point_direction(attached_enemy.x, attached_enemy.y, oPlayer.x, oPlayer.y - 24);
 	   }
         // Jeśli kulka jest przyczepiona do wroga, przyciągnij wroga w kierunku gracza
@@ -58,7 +58,7 @@ else {
 			{
 			if(death_flag)
 				{
-				attached_enemy.speed = 10; // Prędkość przyciągania wroga (możesz dostosować)
+				attached_enemy.speed = 10 + speed_bonus; // Prędkość przyciągania wroga (możesz dostosować)
 		        attached_enemy.direction = point_direction(attached_enemy.x, attached_enemy.y, oPlayer.x, oPlayer.y);
 				}
 			}
@@ -86,6 +86,6 @@ else {
 	        instance_destroy();
 			attached_to_enemy = false;
 			death_flag = true;
-	        oPlayer.ammo =   oPlayer.maxAmmo;
+	        oPlayer.ammo +=1;
 	    }
     }

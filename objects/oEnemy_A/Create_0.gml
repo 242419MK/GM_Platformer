@@ -8,6 +8,7 @@ grabbed = false;
 
 rage_timer = 30;
 rage = false;
+damage = -0.5;
 
 dead = false;
 

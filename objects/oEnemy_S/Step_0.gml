@@ -11,24 +11,29 @@ if (place_meeting(x, y + vsp2, oWall))
 	}
 	
 	
-if (place_meeting(x, y, oPlayer)) {
+if (place_meeting(x, y, oPlayer) && instance_exists(oPlayer)) 
+{
     speed = 0;
     rage = true;
-    oPlayer.hp -= 0.2;
-    if (oPlayer.hp < 160) {
+    oPlayer.hp -= damage / oPlayer.armor;
+    if (oPlayer.hp < 160)
+	{
         oPlayer.damaged = true;
     }
 }
 
-if (rage) {
+if (rage) 
+{
     rage_timer -= 1;
-    if (rage_timer == 0) {
+    if (rage_timer == 0) 
+	{
 		image_speed = 2;
         sprite_index = sEnemy_S_Attack;
         rage_timer = 30;
         rage = false;
     }
-} else {
+} else 
+{
 	if(shooting_timer<80)
 	{	
 		sprite_index = sEnemy_S;
@@ -36,20 +41,24 @@ if (rage) {
 }
 
 // Check if the enemy is still holding the player
-if (!place_meeting(x, y, oPlayer) and grabbed) {
+if (!place_meeting(x, y, oPlayer) and grabbed) 
+{
     grabbed = false;
 }
 
 // Shooting logic
 shooting_timer -= 1;
-if (shooting_timer <= 0) {
+if (shooting_timer <= 0) 
+{
 	
 	sprite_index = sEnemy_S_Attack;
 
 	// Check if the player exists and is within a distance of less than 800
-    if (instance_exists(oPlayer) && point_distance(x, y, oPlayer.x, oPlayer.y) < 600) {
+    if (instance_exists(oPlayer) && point_distance(x, y, oPlayer.x, oPlayer.y) < 600) 
+	{
         // Check if there are no walls between the enemy and the player before shooting
-        if (!collision_line(x, y+10, oPlayer.x, oPlayer.y, oWall, false, true)) {
+        if (!collision_line(x, y+10, oPlayer.x, oPlayer.y, oWall, false, true)) 
+		{
 			var adjust = 0;
 			if(oPlayer.x<oEnemy_S.x){adjust = -32;}
 				else {adjust = 32;}

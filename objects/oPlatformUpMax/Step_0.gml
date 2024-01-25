@@ -5,7 +5,7 @@ if (going_up)
 {
 	sprite_index = sPlatform_max_up;
     // Move up
-    speed=-2
+    speed = -speed_value;
 
     // Check if the platform has reached the maximum height
     if (y < spawny - max_height) 
@@ -17,7 +17,7 @@ if (going_up)
 {
 	sprite_index = sPlatform_max_down;
     // Move down
-    speed = 2;
+    speed = speed_value;
 	if (place_meeting(x, y-1, oPlayer)) 
 	{
 		oPlayer.hp -=0.2 - 0.5*oPlayer.hp_regen;

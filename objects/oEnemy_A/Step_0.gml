@@ -35,11 +35,11 @@ if(!grabbed)
 	y = y + vsp2;
 }
 
-if (place_meeting(x, y, oPlayer)) 
+if (place_meeting(x, y, oPlayer) && instance_exists(oPlayer)) 
 {
 	speed=0;
 	rage = true;
-    oPlayer.hp -= 0.4;
+    oPlayer.hp -= damage / oPlayer.armor;
 	if(oPlayer.hp<160){
 	oPlayer.damaged=true;
 	}
