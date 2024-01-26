@@ -10,6 +10,14 @@ if (place_meeting(x, y + vsp3, oWall))
     vsp3 = 0;
 }
 
+if(place_meeting(x,y,oWall))
+{
+	while(place_meeting(x,y,oWall))
+	{
+	x=x-1;
+	}
+}
+
 y = y + vsp3;
 
 sprite_index = sRedHearth;

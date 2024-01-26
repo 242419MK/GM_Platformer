@@ -13,6 +13,7 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"400e7354-d060-40a2-9b0c-bed40674d7d6",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4a6ffe81-5379-452c-88ca-c606e83c33ca",},
   ],
   "gridX": 0,
@@ -25,8 +26,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Sprites/Enemies.yy",
+    "name": "sEnemy_A",
+    "path": "folders/Sprites/Enemies/sEnemy_A.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -43,7 +44,7 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 2.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
@@ -54,7 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4a6ffe81-5379-452c-88ca-c606e83c33ca","path":"sprites/sEnemy_A_Attack/sEnemy_A_Attack.yy",},},},"Disabled":false,"id":"f5a457dd-e9c9-4cdc-bb3c-83def1211545","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"400e7354-d060-40a2-9b0c-bed40674d7d6","path":"sprites/sEnemy_A_Attack/sEnemy_A_Attack.yy",},},},"Disabled":false,"id":"7ad31dfd-957d-4722-a5c7-9f8cf80dfeac","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4a6ffe81-5379-452c-88ca-c606e83c33ca","path":"sprites/sEnemy_A_Attack/sEnemy_A_Attack.yy",},},},"Disabled":false,"id":"f5a457dd-e9c9-4cdc-bb3c-83def1211545","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -5,7 +5,7 @@
 
  if (instance_exists(oPlayer)) {
 	
-		if(oPlayer.round_time<=0)
+		if(oPlayer.progress==oPlayer.progressMax)
 		{
 		instance_destroy();
 		}

@@ -10,41 +10,66 @@ if (place_meeting(x, y + vsp2, oWall))
 		vsp2=0;
 	}
 	
-//Attack enemy in close range
-if (place_meeting(x, y, oPlayer) && instance_exists(oPlayer)) 
+
+if(!grabbed)
 {
-    speed = 0;
-    rage = true;
-    oPlayer.hp -= damage/ oPlayer.armor;
-    if (oPlayer.hp < 160) {
-        oPlayer.damaged = true;
-    }
+y = y + vsp2;
 }
 
-if (rage) 
+	
+//atak melle
+if (place_meeting(x, y, oPlayer) && instance_exists(oPlayer) && !grabbed) 
 {
-    rage_timer -= 1;
-    if (rage_timer == 0) 
-	{
-		image_speed = 2;
-        sprite_index = sEnemy_S_Attack_S2;
-        rage_timer = 30;
-        rage = false;
+    speed = 0;
+    sprite_index = sEnemy_S_Attack_S2;
+
+    if (rage_timer == 0) // Sprawdź, czy timer osiągnął dokładnie 12
+    {
+        oPlayer.hp -= damage / oPlayer.armor;
+		oPlayer_hit_melle.show = true;
+		hit_player=true;
+		rage_timer=60;
     }
-} else {
-	if(shooting_timer<80)
+	
+	if(hit_player)
+	{
+		oPlayer.sprite_index = sPlayer_hit;
+		if(rage_timer==30){hit_player=false;}
+	}
+
+    rage_timer--; 
+}  
+
+if(shooting_timer<80)
+{
 	{	
 		sprite_index = sEnemy_S2;
 	}
 }
 
+// Check if the enemy is still holding the player
+if(grabbed)
+{
+	sprite_index = sEnemy_S_hooked;
+	grab_free_time--;
+	if(grab_free_time<=0)
+	{
+		grabbed=false;
+		grab_free_time=180;
+	}
+}
+
+if(grabbed && place_meeting(x,y,oPlayer))
+{
+	speed = 0;
+}
+
 // Shooting logic for the child object
 
 shooting_timer -= 1;
-if (shooting_timer <= 0) 
+if (shooting_timer <= 0 && !grabbed && !hitted) 
 {
 	sprite_index = sEnemy_S_Attack_S2;
-    // Your custom shooting logic for the child object
 	if (instance_exists(oPlayer)&& point_distance(x, y, oPlayer.x, oPlayer.y) < 500)
 	{
 		if (!collision_line(x, y+10, oPlayer.x, oPlayer.y, oWall, false, true))
@@ -76,11 +101,23 @@ if (shooting_timer <= 0)
 
 if(dead==true)
 {
-	var reward = instance_create_layer(x, y-50, "Player", oPurpleHearth);
+	var reward = instance_create_layer(x, y-30, "Player", oPurpleHearth);
 	if(better_reward)
 	{
-		var reward2 = instance_create_layer(x-20, y-40, "Player", oPurpleHearth);
-		var reward3 = instance_create_layer(x+20, y-40, "Player", oPurpleHearth);
+		var reward2 = instance_create_layer(x-20, y-20, "Player", oPurpleHearth);
+		var reward3 = instance_create_layer(x+20, y-20, "Player", oPurpleHearth);
 	}
 	instance_destroy();
+}
+
+
+if(hitted)
+{
+	sprite_index = sEnemy_S2_hit;
+	hit_counter--;
+	if(hit_counter<=0)
+	{
+		hit_counter=30;
+		hitted=false;
+	}
 }

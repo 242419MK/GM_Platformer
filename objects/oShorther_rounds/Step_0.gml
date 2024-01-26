@@ -8,7 +8,7 @@ if(visible)
 		if(oPlayer.cash >= price)
 		{
 			oPlayer.cash -= price;
-			oPlayer.round_time_bonus -= 3600;
+			oPlayer.progressMax -= 20;
 		
 			transactionCompleted = true;
 			with(oBought)

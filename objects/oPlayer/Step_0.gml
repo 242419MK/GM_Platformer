@@ -5,10 +5,17 @@ key_jump = keyboard_check_pressed(vk_space);
 
 var move = key_right - key_left;
 hsp = move * walksp;
-dash_cd-=1;
-gui_couinter+=1;
+dash_cd--;
+gui_couinter++;
+
+if(gui_couinter%3==0){
+gui_hp_counter++;
+}
+
+if(gui_hp_counter>7){gui_hp_counter=0;}
 vsp += grv;
 hood_cd--;
+
 if(hood_cd<=0)
 {
 	hood_cd=0;
@@ -24,33 +31,33 @@ if(oPlayer.x<0)
 	oPlayer.x=200;
 }
 		
-		
-if(round_time>0)
+if (progress > progressMax) 
 {
-	round_time-=1;
+    progress = progressMax;
 }
-else 
+
+if(progress == progressMax)
 {
-	overtime+=1;
+	overtime++;
 }
 
 if(instance_exists(oEnemy))
 {
-	if(overtime>0)
+	if(progress == progressMax)
 	{
 		oPlatformUpMax.speed_value = 3;
 		oEnemy_S.timeEnds = true;
 		oEnemy_S_2.timeEnds = true;
 	}
 
-	if(overtime>=1200
-	){
-		oEnemy_L.timeEnds = true;
+	if(overtime>=1200)
+	{
+		oEnemy_A.timeEnds = true;
 	}
 
 	if(overtime>=3600)
 	{
-		oEnemy_A.timeEnds = true;
+		oEnemy_L.timeEnds = true;
 		oEnemy_A.better_reward=true;
 		oEnemy_S.better_reward=true;
 		oEnemy_S_2.better_reward=true;
@@ -97,28 +104,7 @@ else {
 }
 
 
-if (place_meeting(x, y + 1, oWall))
-{
-    if (key_jump && jump_pressed_time == -1)
-    {
-        // Space key is pressed for the first time
-        jump_pressed_time = current_time;
-    }
 
-    if (keyboard_check(vk_space) && jump_pressed_time != -1)
-    {
-        // Space key is being held down
-        var jump_duration = current_time - jump_pressed_time;
-        
-        // Calculate jump height based on how long the space key is held down
-        vsp = jump_height * (1 - jump_duration / max_jump_duration);
-    }
-    else
-    {
-        // Reset the jump_pressed_time when the space key is released
-        jump_pressed_time = -1;
-    }
-}
 
 //horizontal movement and collisions
 if (place_meeting(x+hsp, y, oWall))
@@ -135,6 +121,7 @@ x = x + hsp;
 
 
 //Animation
+
 if(!place_meeting(x,y+1,oWall))
 {		
 		if (play)
@@ -146,11 +133,6 @@ if(!place_meeting(x,y+1,oWall))
 		        play = false; // Set play to false when animation ends
 			}
 		}
-		//przez to powyżej z jakiegoś powodu postać atakując będąc obok ściany zatrzymuje się,
-		// przez co może sie wspinać double jumpem
-		//feature czy bug?
-		//jak feature to by wypadało zrobić osobnego spritea
-		//jak bug to trzeba naprawić
 		else 
 		{
 			if(ammo<maxAmmo)
@@ -233,6 +215,25 @@ if(place_meeting(x,y+1,oWall))
 	}
 }
 
+if(distance_to_object(oEnemy_Bullet)<5 || distance_to_object(oEnemy_Bullet_Big)<5)
+{
+	start_hit_animation = true;
+}
+
+if(start_hit_animation && hit_counter>0)
+{
+	sprite_index = sPlayer_hit;
+	hit_counter--;
+}
+
+if(hit_counter<=0)
+{
+	start_hit_animation = false;
+	hit_counter = 10;
+}
+
+
+
 if(hsp !=0) image_xscale = sign(hsp);
 
 
@@ -258,44 +259,37 @@ if (mouse_check_button_pressed(mb_right) && hood_cd<=0) {
 }
 
 
-attack_cd-=1;
-//attack
+attack_cd -= 1;
+
+// Attack
 if (mouse_check_button_pressed(mb_left) && attack_cd <= 0) {
-	play = true; //attack animation
-	
-    var hitted_enemy = noone; // Initialize to no enemy hitted
+    play = true; // Attack animation
 
     // Iterate through all instances of oEnemy
-    with (oEnemy) 
-	{
-        if (point_distance(x, y, oPlayer.x, oPlayer.y) < oPlayer.attack_range) 
-		{
-            hitted_enemy = id;
+    with (oEnemy) {
+        // Check if the enemy is within the player's attack range
+        if (point_distance(x, y, oPlayer.x, oPlayer.y) < oPlayer.attack_range) {
+            // Apply the attack logic to each enemy
+			hitted = true;
+            hp -= oPlayer.attack_damage;
+            if (hp < 0) {
+				oPlayer.progress+=value;
+                dead = true;
+                Shake(6, 10);
+            }
         }
     }
 
-    if (hitted_enemy != noone) 
-	{
-		hitted_enemy.hp-=attack_damage;
-		if(hitted_enemy.hp<0)
-		{
-		hitted_enemy.dead=true;
-		Shake(6,10);
-		if(hp<maxhp-5){hp +=5;}
-		}
-    }
-	
-	 var hitted_chest = noone; // Initialize to no enemy hitted
-	 with (oChest) 
-	 {
-        if (point_distance(x, y, oPlayer.x, oPlayer.y) < oPlayer.attack_range) 
-		{
-			hitted_chest = id;
-			hitted_chest.state -=1;
+    // Iterate through all instances of oChest
+    with (oChest) {
+        // Check if the chest is within the player's attack range
+        if (point_distance(x, y, oPlayer.x, oPlayer.y) < oPlayer.attack_range) {
+            // Apply the attack logic to each chest
+            state -= 1;
         }
     }
-	
-	attack_cd=attack_cd_max;
+
+    attack_cd = attack_cd_max;
 }
 
 

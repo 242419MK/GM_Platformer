@@ -1,6 +1,4 @@
 
-
-
 vsp3 = vsp3 + grv3;
 
 if (place_meeting(x, y + vsp3, oWall))
@@ -13,7 +11,15 @@ if (place_meeting(x, y + vsp3, oWall))
 }
 y = y + vsp3;
 
+
 sprite_index = sPurpleHearth;
+if(place_meeting(x,y,oWall))
+{
+	while(place_meeting(x,y,oWall))
+	{
+	x=x-1;
+	}
+}
 
 
 if(place_meeting(x,y,oPlayer))

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oUpgrade_room_move",
+  "name": "oPlayer_hit_melle",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Scene",
-    "path": "folders/Objects/Scene.yy",
+    "name": "Player",
+    "path": "folders/Objects/Player.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -29,9 +29,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sUpgrade_room_move",
-    "path": "sprites/sUpgrade_room_move/sUpgrade_room_move.yy",
+    "name": "sPlayer_hit_melle",
+    "path": "sprites/sPlayer_hit_melle/sPlayer_hit_melle.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

@@ -26,7 +26,7 @@ red_hearths = 0;
 blue_hearths = 0;
 purple_hearths = 0;
 green_hearths = 0;
-cash = 500;
+cash = 0;
 
 play = false;
 
@@ -46,10 +46,18 @@ grabbing_wall = false;
 hook_speed_bonus = 0;
 hook_long_bonus = 0;
 mode = 0;
+hit_counter = 10;
+start_hit_animation = false;
 
 round_time = 18000; //600 = 10s dla testow 
 round_time_bonus = 0;
 overtime = 0;
 
+progress = 0;
+progressMax=200;
+
+
+
 deadcounter=0;
 gui_couinter = 0;
+gui_hp_counter = 0;

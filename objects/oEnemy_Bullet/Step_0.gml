@@ -6,7 +6,7 @@ if (place_meeting(x, y, oWall)) or (death_timer == 0) {
 
 if(timeEnds==true)
 {
-	speed = 8;
+	speed = 7;
 	death_timer = 10;
 }
 
@@ -16,6 +16,7 @@ if (!place_meeting(x, y, oPlayer)) {
     x += lengthdir_x(speed, direction);
     y += lengthdir_y(speed, direction);
 } else {
+	sprite_index = sEnemy_Projectile_hit;
     speed = 0;
     death_timer = 0;
     oPlayer.hp -= damage/oPlayer.armor;

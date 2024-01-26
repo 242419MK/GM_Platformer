@@ -9,7 +9,7 @@ if(visible)
 		{
 			oPlayer.cash -= price;
 			oPlayer.maxhp += oPlayer.maxhp/4;
-		
+			oPlayer.hp = oPlayer.maxhp;
 			transactionCompleted = true;
 			with(oBought)
 			{

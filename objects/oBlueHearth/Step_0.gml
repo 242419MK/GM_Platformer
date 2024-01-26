@@ -14,6 +14,13 @@ y = y + vsp3;
 
 sprite_index = sBlueHearth;
 
+if(place_meeting(x,y,oWall))
+{
+	while(place_meeting(x,y,oWall))
+	{
+	x=x-1;
+	}
+}
 
 if(place_meeting(x,y,oPlayer))
 {

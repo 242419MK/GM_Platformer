@@ -5,6 +5,7 @@ var textY =7;
 var darker_gray = make_color_rgb(100, 100, 100);
 var middle_gray = make_color_rgb(150, 150, 150);
 var lighter_gray = make_color_rgb(200, 200, 200);
+var red = make_color_rgb(255, 0, 0);
 
 draw_set_color(darker_gray);
 draw_rectangle(0, 0, 960, 30, false); //interface rectangle
@@ -17,18 +18,18 @@ draw_rectangle(490, 7, 690, 25, false); //double jump info
 draw_rectangle(740, 7, 880, 25, false); //dash info
 draw_rectangle(900, 7, 970, 25, false); //ammo
 
-draw_set_color(lighter_gray);
-draw_rectangle(290, 7, 455, 25, false); //round time
-
 
 draw_set_color(c_black);
 
-draw_set_font(fArial12);
-
 var rounded_hp = round(oPlayer.hp / 10) * 10;
-draw_text(10, textY, "HP: " + string(rounded_hp));
+var hp_sprite = sHP;
 
+draw_sprite_ext(hp_sprite,gui_hp_counter,20,textY+8,0.45,0.45,0,c_white,1);
 
+draw_set_font(fArial18);
+draw_text(36, textY-3, string(rounded_hp));
+
+draw_set_font(fArial12);
 var hearths_number = oPlayer.red_hearths + oPlayer.blue_hearths + oPlayer.green_hearths + oPlayer.purple_hearths;
 
 for (var i = 0; i < 4; i++) {
@@ -46,26 +47,17 @@ draw_text(200, textY, "$: " + string(money));
 
 
 
-var time_M = floor(oPlayer.round_time /60 / 60); // Zaokrąglamy w dół do pełnych minut
-var time_S = floor(oPlayer.round_time /60  % 60); // Reszta to sekundy
+var progressPercentage = progress / progressMax;
 
-var timeO_M = floor(oPlayer.overtime /60 / 60); // Zaokrąglamy w dół do pełnych minut
-var timeO_S = floor(oPlayer.overtime /60  % 60); // Reszta to sekundy
-
-var time_text ="Round time: " +  string(time_M) + ":" + string(time_S); // Dodajemy zero przed sekundy, jeśli są jednocyfrowe
-var time_text2 ="Over time! : " +  string(timeO_M) + ":" + string(timeO_S); // Dodajemy zero przed sekundy, jeśli są jednocyfrowe
-
-
-
-if(overtime<=0){
 draw_set_color(c_black);
-draw_text(300, textY, time_text);
-}
-else
+draw_rectangle(300, 7, 480, 25, false);
+
+if(progressPercentage>0)
 {
-draw_set_color(c_red);
-draw_text(300, textY, time_text2);
+draw_set_color(red);
+draw_rectangle(302, 9, 300 + 178 * progressPercentage, 23, false);
 }
+
 
 draw_set_color(darker_gray);
 if(room=Upgrades)

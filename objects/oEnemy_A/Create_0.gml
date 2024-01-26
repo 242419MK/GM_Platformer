@@ -5,17 +5,22 @@ walksp2 = 4;
 
 turn =1;
 grabbed = false;
+grab_free_time = 180;
+hitted = false;
+hit_counter=30;
 
-rage_timer = 30;
+rage_timer = 0;
 rage = false;
-damage = -0.5;
+damage = 3;
+hit_player=false;
+value = 2;
 
 dead = false;
 
 fullHp = 100;
 hp = fullHp;
 
-timeEnds=false;
+timeEnds = false;
 better_reward = false;
 
 jump = false;
