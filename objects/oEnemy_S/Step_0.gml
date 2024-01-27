@@ -1,6 +1,7 @@
 //Attack enemy in close range
-image_speed = 1;
-
+image_speed = 0.8;
+image_xscale = 1.5;
+image_yscale = 1.5;
 //wall collisions 
 vsp2 = vsp2 + grv2;
 if (place_meeting(x, y + vsp2, oWall))

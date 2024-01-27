@@ -1,5 +1,7 @@
 // Draw GUI event of obj_UI
+
 draw_self(); // Draw the object sprite
+
 var textY =7;
 
 var darker_gray = make_color_rgb(100, 100, 100);
@@ -27,7 +29,7 @@ var hp_sprite = sHP;
 draw_sprite_ext(hp_sprite,gui_hp_counter,20,textY+8,0.45,0.45,0,c_white,1);
 
 draw_set_font(fArial18);
-draw_text(36, textY-3, string(rounded_hp));
+draw_text(36, textY-3, rounded_hp);
 
 draw_set_font(fArial12);
 var hearths_number = oPlayer.red_hearths + oPlayer.blue_hearths + oPlayer.green_hearths + oPlayer.purple_hearths;

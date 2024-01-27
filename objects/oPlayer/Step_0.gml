@@ -36,7 +36,7 @@ if (progress > progressMax)
     progress = progressMax;
 }
 
-if(progress == progressMax)
+if(progress >= progressMax)
 {
 	overtime++;
 }
@@ -275,8 +275,9 @@ if (mouse_check_button_pressed(mb_left) && attack_cd <= 0) {
             if (hp < 0) {
 				oPlayer.progress+=value;
                 dead = true;
-                Shake(6, 10);
+                Shake(14, 10);
             }
+			else Shake(5, 10);
         }
     }
 

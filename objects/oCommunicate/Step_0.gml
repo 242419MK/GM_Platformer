@@ -23,7 +23,7 @@ if (instance_exists(oPlayer))
 
 
     // Check and set sprite based on overtime
-    if (oPlayer.overtime > 0 && oPlayer.overtime < 60)
+    if ((oPlayer.overtime > 0 && oPlayer.overtime < 60))
     {
         show = true;
         sprite_index = sOvertime_START;

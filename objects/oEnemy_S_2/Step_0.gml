@@ -1,5 +1,6 @@
 image_speed = 1;
-
+image_xscale = 2;
+image_yscale = 2;
 vsp2 = vsp2 + grv2;
 if (place_meeting(x, y + vsp2, oWall))
 	{

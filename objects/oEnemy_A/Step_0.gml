@@ -1,4 +1,5 @@
 vsp2 = vsp2 + grv2;
+
 if (place_meeting(x, y + vsp2, oWall))
 	{
 		while(!place_meeting(x, y + sign(vsp2) ,oWall))
@@ -110,6 +111,7 @@ if(instance_exists(oPlayer))
 {
 if(timeEnds)
 	{
+		damage=7;
 		speed = 3;
 		direction = point_direction(x,y, oPlayer.x, oPlayer.y)
 		jump = true;

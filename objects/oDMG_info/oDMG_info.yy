@@ -26,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sDash_enable_upg_info",
-    "path": "sprites/sDash_enable_upg_info/sDash_enable_upg_info.yy",
+    "name": "sDMG_up_upg_info",
+    "path": "sprites/sDMG_up_upg_info/sDMG_up_upg_info.yy",
   },
   "spriteMaskId": null,
   "visible": false,

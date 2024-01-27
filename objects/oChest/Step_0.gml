@@ -23,6 +23,7 @@ else if (state == 1)
 	
 	if(deathcd<=0)
 	{
+	Shake(12, 10);
 	instance_destroy();
 		if(instance_exists(oPlayer))
 		{

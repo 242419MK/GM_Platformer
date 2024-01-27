@@ -6,6 +6,8 @@ image_speed=1;
 // movement logic, move around spawn point and follow enemy if close enough
 if (instance_exists(oPlayer) && !grabbed) 
 {
+	speed=2;
+	sprite_index = sEnemy_L;
 	if(!timeEnds)
 	{
 		var distance_to_spawn = point_distance(x, y, spawnpoint_x, spawnpoint_y);
@@ -88,6 +90,10 @@ if (!place_meeting(x, y, oPlayer))
 //grab logic, freeze enemy for 3s and set its speed to 0
 if(grabbed)
 {
+	if(place_meeting(x,y,oPlayer))
+	{
+	speed = 0;
+	}
 	sprite_index = sEnemy_L_hooked;
 	grab_free_time--;
 	if(grab_free_time<=0)
@@ -95,10 +101,6 @@ if(grabbed)
 		grabbed=false;
 		grab_free_time=120;
 	}
-}
-if(grabbed && place_meeting(x,y,oPlayer))
-{
-	speed = 0;
 }
 
 //if hitted by player change sprite and make enemy unable to attack and move for 30frames

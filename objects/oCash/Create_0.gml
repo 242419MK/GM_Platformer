@@ -5,21 +5,22 @@ cash2=0;
 cash3=0;
 cash4=0;
 cash=0;
+payout=false;
+payed=false;
+wait = 240;
 
-if(instance_exists(oPlayer))
-{
-cash1 = oPlayer.red_hearths * 1.12;
-cash2 = oPlayer.blue_hearths * 2.13;
-cash3 = oPlayer.purple_hearths * 3.18;
-cash4 = oPlayer.green_hearths * 4.02;
+starty=y+12;
 
-cash = cash+cash2+cash3+cash3;
+red = instance_create_layer(x,y+12,"Upgrades",oRedHearth);
+red.grv3=0;
+blue = instance_create_layer(x+100,y+12,"Upgrades",oBlueHearth);
+blue.grv3=0;
+purple = instance_create_layer(x+200,y+12,"Upgrades",oPurpleHearth);
+purple.grv3=0;
+green = instance_create_layer(x+300,y+12,"Upgrades",oGreenHearth);
+green.grv3=0;
 
-oPlayer.cash = oPlayer.cash + cash ;
-
-oPlayer.red_hearths=0;
-oPlayer.blue_hearths=0;
-oPlayer.purple_hearths=0;
-oPlayer.green_hearths=0;	
-}
-
+number1= oPlayer.red_hearths;
+number2 = oPlayer.blue_hearths;
+number3 = oPlayer.purple_hearths;
+number4 = oPlayer.green_hearths;

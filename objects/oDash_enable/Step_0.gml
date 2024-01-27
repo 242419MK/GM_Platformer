@@ -31,6 +31,16 @@ if(visible)
 			}
 		}
 	}
+	else 
+	{
+		with(oUnable_to_buy)
+		{
+		if(place_meeting(x,y, oDash_enable))
+			{
+				visible=false;
+			}
+		}
+	}
 
 	if(oPlayer.x> x-64 && oPlayer.x < x+64 )
 	{
