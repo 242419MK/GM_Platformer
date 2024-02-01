@@ -9,7 +9,7 @@ dash_cd--;
 gui_couinter++;
 
 if(gui_couinter%3==0){
-gui_hp_counter++;
+	gui_hp_counter++;
 }
 
 if(gui_hp_counter>7){gui_hp_counter=0;}

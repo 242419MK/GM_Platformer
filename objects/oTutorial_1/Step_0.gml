@@ -12,9 +12,18 @@ if(!instance_exists(oEnemy_A))
 		enemy.value=0;
 		wait_counter=120;
 	}
-	
-	
 }
+
+
+if(instance_exists(oEnemy_A))
+{
+	with(oEnemy_A)
+	{
+	if(x > 0 && x<room_width && y>0 && y<room_height)
+	{}else instance_destroy();
+	}
+}
+
 
 if(enemy_killed>0)
 {
