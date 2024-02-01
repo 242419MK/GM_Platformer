@@ -11,7 +11,7 @@ rage = false;
 shooting_timer = 120;
 damage = 1;
 value = 5;
-
+sound_played=false;
 
 fullHp = 100;
 hp = fullHp;

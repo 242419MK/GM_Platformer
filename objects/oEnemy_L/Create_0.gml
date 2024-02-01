@@ -19,12 +19,13 @@ follow_speed = 0.1; // Smoothing factor for following the player
 value = 9;
 prevx = x;
 attack_adjust = 0;
-damage = 1;
+damage = 10;
 
 fullHp = 200;
 hp = fullHp;
 hp_buff=false;
 dead=false;
+sound_played=false;
 
 
 timeEnds = false;

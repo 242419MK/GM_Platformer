@@ -14,7 +14,7 @@ fullHp = 100;
 hp = fullHp;
 hp_buff=false;
 damage = 1;
-
+sound_played=false;
 timeEnds=false;
 better_reward = false;
 

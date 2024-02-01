@@ -13,7 +13,7 @@ draw_text(x+150,y-20,string(number3));
 draw_text(x+222,y-20,"+");
 draw_text(x+250,y-20,string(number4));
 draw_text(x+322,y-20,"=");
-draw_text(x+360,y-20,string(cash));
+draw_text(x+360,y-20,string(cashout));
 
 
 

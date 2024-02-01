@@ -38,6 +38,8 @@ if (place_meeting(x, y, oPlayer) && instance_exists(oPlayer) && !grabbed && !hit
 
     if (rage_timer == 0) // Sprawdź, czy timer osiągnął dokładnie 12
     {
+		audio_play_sound(enemy_attack1,700,false);
+		audio_play_sound(mhitted,100,false);
         oPlayer.hp -= damage / oPlayer.armor;
 		oPlayer_hit_melle.show = true;
 		hit_player=true;
@@ -101,12 +103,20 @@ if(dead==true)
 
 if(hitted)
 {
+	if(!sound_played)
+	{
+	audio_play_sound(enemy_hitted,1000,false);	
+	sound_played=true;
+	}
+	
+	
 	sprite_index = sEnemy_A_hit;
 	hit_counter--;
 	if(hit_counter<=0)
 	{
 		hit_counter=30;
 		hitted=false;
+		sound_played=false;
 	}
 }
 

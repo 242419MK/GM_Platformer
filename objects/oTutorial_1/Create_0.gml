@@ -3,6 +3,8 @@
 
 enemy =  instance_create_layer(x, y, "Enemies", oEnemy_A);
 wait_counter=120;
-enemy.hp=1000000;
+
+enemy.fullHp=10000;
+enemy.hp=enemy.fullHp;
 enemy.value=0;
 open=false;

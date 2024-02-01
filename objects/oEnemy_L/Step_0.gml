@@ -71,6 +71,8 @@ if (place_meeting(x-attack_adjust, y, oPlayer) && instance_exists(oPlayer) && !g
 
     if (rage_timer == 0) // Sprawdź, czy timer osiągnął dokładnie 12
     {
+		audio_play_sound(enemy_L_attack,750,false);
+		audio_play_sound(mhitted,760,false);
         oPlayer.hp -= damage / oPlayer.armor;
 		oPlayer_hit_melle.show = true;
 		hit_player=true;
@@ -111,12 +113,18 @@ if(grabbed)
 //if hitted by player change sprite and make enemy unable to attack and move for 30frames
 if(hitted)
 {
+	if(!sound_played)
+	{
+		audio_play_sound(enemy_hitted,1000,false);	
+		sound_played=true;
+	}
 	sprite_index = sEnemy_L_hit;
 	hit_counter--;
 	if(hit_counter<=0)
 	{
 		hit_counter=30;
 		hitted=false;
+		sound_played=false;
 	}
 }
 

@@ -63,3 +63,8 @@ gui_couinter = 0;
 gui_hp_counter = 0;
 
 entityOnMinimap= true;
+
+step_cd = 23;
+dead_play=false;
+
+menu_cd=60;

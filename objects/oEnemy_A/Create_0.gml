@@ -8,12 +8,13 @@ grabbed = false;
 grab_free_time = 180;
 hitted = false;
 hit_counter=30;
+sound_played=false;
 
 rage_timer = 0;
 rage = false;
 damage = 3;
 hit_player=false;
-value = 200;
+value = 2;
 
 dead = false;
 

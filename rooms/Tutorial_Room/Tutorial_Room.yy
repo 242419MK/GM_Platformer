@@ -28,6 +28,7 @@
     {"name":"inst_63C3953F","path":"rooms/Tutorial_Room/Tutorial_Room.yy",},
     {"name":"inst_717F9AC","path":"rooms/Tutorial_Room/Tutorial_Room.yy",},
     {"name":"inst_72AF2EAC","path":"rooms/Tutorial_Room/Tutorial_Room.yy",},
+    {"name":"inst_1D6E340E","path":"rooms/Tutorial_Room/Tutorial_Room.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -39,6 +40,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6A44EC97","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oFulscreen","path":"objects/oFulscreen/oFulscreen.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2208.0,"y":192.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5452D20F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oPause","path":"objects/oPause/oPause.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2048.0,"y":224.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_17DB4CFD","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oGainHook","path":"objects/oGainHook/oGainHook.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1792.0,"y":544.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_1D6E340E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"oMusic1","path":"objects/oMusic1/oMusic1.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1632.0,"y":416.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Enemies","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":11,"SerialiseWidth":63,"TileCompressedData":[

@@ -7,4 +7,4 @@ direction = point_direction(x, y, oPlayer.x, oPlayer.y-32);
 }
 
 timeEnds = false;
-damage = 3;
+damage = 6;

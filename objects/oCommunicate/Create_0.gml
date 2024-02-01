@@ -7,3 +7,4 @@ timer = 180;
 
 show = false; 
 
+play = false;
