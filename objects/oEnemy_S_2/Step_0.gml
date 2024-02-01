@@ -1,6 +1,7 @@
 image_speed = 1;
 image_xscale = 2;
 image_yscale = 2;
+
 vsp2 = vsp2 + grv2;
 if (place_meeting(x, y + vsp2, oWall))
 	{
@@ -71,19 +72,19 @@ shooting_timer -= 1;
 if (shooting_timer <= 0 && !grabbed && !hitted) 
 {
 	sprite_index = sEnemy_S_Attack_S2;
-	if (instance_exists(oPlayer)&& point_distance(x, y, oPlayer.x, oPlayer.y) < 500)
+	if (instance_exists(oPlayer))
 	{
-		if (!collision_line(x, y+10, oPlayer.x, oPlayer.y, oWall, false, true))
+		if (!collision_line(x, y-10, oPlayer.x, oPlayer.y, oWall, false, true))
 		{
 			for (var i = 0; i < 3; i++) 
 			{
 				var adjust = 0;
 				if(oPlayer.x<oEnemy_S_2.x){adjust = -32;}
 				else {adjust = 32;}
-		        var bullet = instance_create_layer(x+adjust, y, "Enemies", oEnemy_Bullet_Big);
+		        var bullet = instance_create_layer(x+adjust, y-32, "Enemies", oEnemy_Bullet_Big);
 				if(timeEnds==true){bullet.timeEnds=true;}
 		        // Calculate the direction for each bullet
-		        var bulletDirection = point_direction(x, y, oPlayer.x + random_range(-8, 8), oPlayer.y + random_range(-8, 8));
+		        var bulletDirection = point_direction(x, y-32, oPlayer.x + random_range(-8, 8), oPlayer.y + random_range(-8, 8));
 
 		        // Slightly adjust the direction for the second and third bullets
 		        if (i == 1) {
@@ -100,13 +101,26 @@ if (shooting_timer <= 0 && !grabbed && !hitted)
    
 }
 
+ if(timeEnds==true)
+ {
+	if(!hp_buff)
+	{
+		fullHp=200;
+		hp=fullHp;
+		hp_buff=true;	
+	}
+}
+
 if(dead==true)
 {
 	var reward = instance_create_layer(x, y-30, "Player", oPurpleHearth);
+	if(grabbed)
+	{
+		var reward2 = instance_create_layer(x+20, y-20, "Player", oPurpleHearth);
+	}
 	if(better_reward)
 	{
-		var reward2 = instance_create_layer(x-20, y-20, "Player", oPurpleHearth);
-		var reward3 = instance_create_layer(x+20, y-20, "Player", oPurpleHearth);
+		var reward3 = instance_create_layer(x-20, y-20, "Player", oPurpleHearth);
 	}
 	instance_destroy();
 }

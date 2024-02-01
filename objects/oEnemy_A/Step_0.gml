@@ -88,9 +88,13 @@ if(grabbed && place_meeting(x,y,oPlayer))
 if(dead==true)
 {
 	var reward = instance_create_layer(x, y-30, "Player", oRedHearth);
+	if(grabbed)
+	{
+		var reward2 = instance_create_layer(x+20, y-20, "Player", oRedHearth);
+	}
 	if(better_reward)
 	{
-		var reward2 = instance_create_layer(x-20, y-20, "Player", oRedHearth);
+		var reward3 = instance_create_layer(x-20, y-20, "Player", oRedHearth);
 	}
 	instance_destroy();
 }
@@ -111,6 +115,13 @@ if(instance_exists(oPlayer))
 {
 if(timeEnds)
 	{
+		if(!hp_buff)
+		{
+			fullHp=200;
+			hp=fullHp;
+			hp_buff=true;
+		}
+		
 		damage=7;
 		speed = 3;
 		direction = point_direction(x,y, oPlayer.x, oPlayer.y)

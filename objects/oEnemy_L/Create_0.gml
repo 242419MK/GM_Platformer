@@ -23,6 +23,7 @@ damage = 1;
 
 fullHp = 200;
 hp = fullHp;
+hp_buff=false;
 dead=false;
 
 
@@ -30,3 +31,5 @@ timeEnds = false;
 better_reward = false;
 
 rage_speed = 3;
+
+entityOnMinimap = true;

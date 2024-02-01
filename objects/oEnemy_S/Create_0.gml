@@ -15,7 +15,9 @@ value = 5;
 
 fullHp = 100;
 hp = fullHp;
+hp_buff=false;
 dead=false;
 
 timeEnds=false;
 better_reward = false;
+entityOnMinimap = true;

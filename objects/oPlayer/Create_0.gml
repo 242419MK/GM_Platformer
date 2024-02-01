@@ -61,3 +61,5 @@ progressMax=200;
 deadcounter=0;
 gui_couinter = 0;
 gui_hp_counter = 0;
+
+entityOnMinimap= true;

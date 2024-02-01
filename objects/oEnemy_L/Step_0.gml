@@ -2,7 +2,6 @@
 // W tym edytorze możesz zapisać swój 
 
 image_speed=1;
-
 // movement logic, move around spawn point and follow enemy if close enough
 if (instance_exists(oPlayer) && !grabbed) 
 {
@@ -42,6 +41,12 @@ if (instance_exists(oPlayer) && !grabbed)
 	
 if(timeEnds==true)
 	{
+		if(!hp_buff)
+		{
+			fullHp=400;
+			hp=fullHp;
+			hp_buff=true;	
+		}
 		direction = point_direction(x, y, oPlayer.x, oPlayer.y);
 		speed = rage_speed;
 	}
@@ -120,10 +125,14 @@ if(hitted)
 if(dead==true)
 {
 	var reward = instance_create_layer(x, y-30, "Player", oGreenHearth);
+	if(grabbed)
+	{
+		var reward2 = instance_create_layer(x+10, y-20, "Player", oGreenHearth);
+	}
 	if(better_reward)
 	{
-		var reward2 = instance_create_layer(x-20, y-20, "Player", oGreenHearth);
-		var reward3 = instance_create_layer(x+20, y-20, "Player", oGreenHearth);
+		var reward3 = instance_create_layer(x-20, y-20, "Player", oGreenHearth);
+		var reward4 = instance_create_layer(x+20, y-20, "Player", oGreenHearth);
 	}
 	instance_destroy();
 }

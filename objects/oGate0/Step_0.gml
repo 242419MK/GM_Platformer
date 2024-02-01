@@ -10,7 +10,7 @@ if(oPlayer.x> 1720-32 && oPlayer.x < 1720+32 )
 
 if(open && !close & !instance_exists(oGainHook))
 {
-	y = y-0.7;
+	y = y-1;
 }
 
 if(y<starty-150)

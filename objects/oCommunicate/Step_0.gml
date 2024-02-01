@@ -42,6 +42,7 @@ if (instance_exists(oPlayer))
     {
         show = true;
         sprite_index = sOvertime_1min;
+		oLetsKill.start=true;
     }
 	
 	

@@ -2,6 +2,7 @@
 image_speed = 0.8;
 image_xscale = 1.5;
 image_yscale = 1.5;
+
 //wall collisions 
 vsp2 = vsp2 + grv2;
 if (place_meeting(x, y + vsp2, oWall))
@@ -70,19 +71,19 @@ if(grabbed && place_meeting(x,y,oPlayer))
 
 // Shooting logic
 shooting_timer -= 1;
-if (shooting_timer <= 0 && !grabbed) 
+if (shooting_timer <= 0 && !grabbed && !hitted) 
 {
 	sprite_index = sEnemy_S_Attack;
-    if (instance_exists(oPlayer) && point_distance(x, y, oPlayer.x, oPlayer.y) < 600) 
+    if (instance_exists(oPlayer)) 
 	{
         // Check if there are no walls between the enemy and the player before shooting
-        if (!collision_line(x, y+10, oPlayer.x, oPlayer.y, oWall, false, true)) 
+       if (!collision_line(x, y-5, oPlayer.x, oPlayer.y, oWall, false, true)) 
 		{
 			var adjust = 0;
 			if(oPlayer.x<oEnemy_S.x){adjust = -32;}
 				else {adjust = 32;}
 			
-            var bullet = instance_create_layer(x+adjust, y, "Enemies", oEnemy_Bullet);
+            var bullet = instance_create_layer(x+adjust, y-10, "Enemies", oEnemy_Bullet);
 			if(timeEnds==true){bullet.timeEnds=true;}
         }
 			shooting_timer = 120;
@@ -90,18 +91,31 @@ if (shooting_timer <= 0 && !grabbed)
 		{
 			shooting_timer = 60;
 		}
-    }
+   }
     
 }
 
+if(timeEnds)
+{
+	if(!hp_buff)
+	{
+		fullHp=200;
+		hp=fullHp;
+		hp_buff=true;	
+	}
+}
+		
 
 if(dead==true)
 {
 	var reward = instance_create_layer(x, y-30, "Player", oBlueHearth);
+	if(grabbed)
+	{
+		var reward2 = instance_create_layer(x+20, y-20, "Player", oBlueHearth);
+	}
 	if(better_reward)
 	{
-		var reward2 = instance_create_layer(x-20, y-20, "Player", oBlueHearth);
-		var reward3 = instance_create_layer(x+20, y-20, "Player", oBlueHearth);
+		var reward3 = instance_create_layer(x-20, y-20, "Player", oBlueHearth);
 	}
 	instance_destroy();
 }
@@ -116,3 +130,4 @@ if(hitted)
 		hitted=false;
 	}
 }
+

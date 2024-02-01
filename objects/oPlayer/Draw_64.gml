@@ -16,9 +16,9 @@ draw_set_color(middle_gray);
 draw_rectangle(5, 7, 76, 25, false);    //hp
 draw_rectangle(110, 7, 170, 25, false); //hearths
 draw_rectangle(200, 7, 280, 25, false); //cash
-draw_rectangle(490, 7, 690, 25, false); //double jump info
-draw_rectangle(740, 7, 880, 25, false); //dash info
-draw_rectangle(900, 7, 970, 25, false); //ammo
+//draw_rectangle(490, 7, 690, 25, false); //double jump info
+//draw_rectangle(740, 7, 880, 25, false); //dash info
+//draw_rectangle(900, 7, 970, 25, false); //ammo
 
 
 draw_set_color(c_black);
@@ -69,20 +69,22 @@ draw_rectangle(270, 0, 480, 25, false); //round time
 
 draw_set_color(c_black);
 var jump = "chuj";
-if(oPlayer.double_jump_enabled==true){jump="active";}
-else {jump="inactive"};
-draw_text(500, textY, "Double jump: " + jump);
+if(oPlayer.double_jump_enabled==true){jump=": active";}
+else {jump=": inactive"};
+draw_sprite_ext(sDouble_Jump_enable,0,530,textY+10,0.4,0.4,0,c_white,1);
+draw_text(560, textY, jump);
 
 
 var dash = "chuj";
-if(oPlayer.dash_enabled==true){dash="active";}
-else {dash="inactive"};
-draw_text(750, textY, "Dash: " + dash);
+if(oPlayer.dash_enabled==true){dash=": active";}
+else {dash=": inactive"};
 
-
+draw_sprite_ext(sDash,0,650,textY+10,0.4,0.4,0,c_white,1);
+draw_text(670, textY, + dash);
 
 var ammunation = ammo;
-draw_text(900, textY,"Ammo:" + string(ammunation));
+draw_sprite_ext(sHook,0,750,textY+10,0.7,0.7,0,c_white,1);
+draw_text(770, textY, string(ammunation));
 
 
 

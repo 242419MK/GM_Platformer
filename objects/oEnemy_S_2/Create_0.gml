@@ -12,7 +12,10 @@ value = 7;
 dead=false;
 fullHp = 100; 
 hp = fullHp;
+hp_buff=false;
 damage = 1;
 
 timeEnds=false;
 better_reward = false;
+
+entityOnMinimap = true;

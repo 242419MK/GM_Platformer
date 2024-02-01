@@ -13,12 +13,13 @@ rage_timer = 0;
 rage = false;
 damage = 3;
 hit_player=false;
-value = 2;
+value = 200;
 
 dead = false;
 
 fullHp = 100;
 hp = fullHp;
+hp_buff=false;
 
 timeEnds = false;
 better_reward = false;
@@ -26,3 +27,5 @@ better_reward = false;
 jump = false;
 jump_height = 0;
 jump_timer = 0;
+
+entityOnMinimap = true;
