@@ -13,7 +13,7 @@ dash_cd = 0;
 dash_length = 50;
 //Jumping variables
 key_jump = keyboard_check_pressed(vk_space);
-jump_height = -14;
+jump_height = -16;
 double_jump_enabled = false;
 jump_number = 2; //How many jumps the player can make
 jump_current = 0; //How many jumps the player has remaining
