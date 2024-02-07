@@ -28,10 +28,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spwaner",
-    "path": "sprites/spwaner/spwaner.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

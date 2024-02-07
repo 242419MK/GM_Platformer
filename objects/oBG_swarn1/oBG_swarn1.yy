@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "wylegarnia1",
-    "path": "sprites/wylegarnia1/wylegarnia1.yy",
+    "name": "sSpawnerRed",
+    "path": "sprites/sSpawnerRed/sSpawnerRed.yy",
   },
   "spriteMaskId": null,
   "visible": true,

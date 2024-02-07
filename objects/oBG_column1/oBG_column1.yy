@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "column",
-    "path": "sprites/column/column.yy",
+    "name": "sColumn_1",
+    "path": "sprites/sColumn_1/sColumn_1.yy",
   },
   "spriteMaskId": null,
   "visible": true,

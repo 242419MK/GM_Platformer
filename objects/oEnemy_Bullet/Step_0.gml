@@ -16,7 +16,7 @@ if (!place_meeting(x, y, oPlayer)) {
     x += lengthdir_x(speed, direction);
     y += lengthdir_y(speed, direction);
 } else {
-	audio_play_sound(mhitted,800,false);
+	audio_play_sound(m_player_hitted,800,false);
 	sprite_index = sEnemy_Projectile_hit;
     speed = 0;
     death_timer = 0;

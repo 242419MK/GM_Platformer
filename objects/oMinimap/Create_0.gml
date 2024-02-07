@@ -1,11 +1,11 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
-TILE_SIZE=64;
+TILE_SIZE=32;
 surfMinimapBg = -1;
 surfMinimapEntities = -1;
 h = room_height/TILE_SIZE;
 w = room_width/TILE_SIZE;
-x = 830;
+x = 700;
 y = 0;
 
 function RefreshMapBG()

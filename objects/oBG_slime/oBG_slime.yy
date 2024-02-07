@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "szlam",
-    "path": "sprites/szlam/szlam.yy",
+    "name": "sSlime",
+    "path": "sprites/sSlime/sSlime.yy",
   },
   "spriteMaskId": null,
   "visible": true,

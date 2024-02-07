@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "chest_1",
-    "path": "sprites/chest_1/chest_1.yy",
+    "name": "sChest",
+    "path": "sprites/sChest/sChest.yy",
   },
   "spriteMaskId": null,
   "visible": true,

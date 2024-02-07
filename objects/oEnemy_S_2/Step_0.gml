@@ -27,8 +27,8 @@ if (place_meeting(x, y, oPlayer) && instance_exists(oPlayer) && !grabbed)
 
     if (rage_timer == 0) // Sprawdź, czy timer osiągnął dokładnie 12
     {
-		audio_play_sound(enemy_attack2,1210,false);
-		audio_play_sound(mhitted,100,false);
+		audio_play_sound(m_enemy_attack2,1210,false);
+		audio_play_sound(m_player_hitted,100,false);
         oPlayer.hp -= damage / oPlayer.armor;
 		oPlayer_hit_melle.show = true;
 		hit_player=true;
@@ -79,7 +79,7 @@ if (shooting_timer <= 0 && !grabbed && !hitted)
 	{
 		if (!collision_line(x, y-10, oPlayer.x, oPlayer.y, oWall, false, true))
 		{
-			audio_play_sound(enemy_attack3,720,false);
+			audio_play_sound(m_enemy_attack3,720,false);
 			for (var i = 0; i < 3; i++) 
 			{
 				var adjust = 0;
@@ -134,7 +134,7 @@ if(hitted)
 {
 	if(!sound_played)
 	{
-		audio_play_sound(enemy_hitted,1000,false);	
+		audio_play_sound(m_enemy_hitted,1000,false);	
 		sound_played=true;
 	}
 	sprite_index = sEnemy_S2_hit;

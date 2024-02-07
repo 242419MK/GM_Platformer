@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "column_destroyed",
-    "path": "sprites/column_destroyed/column_destroyed.yy",
+    "name": "sColumn_destroyed",
+    "path": "sprites/sColumn_destroyed/sColumn_destroyed.yy",
   },
   "spriteMaskId": null,
   "visible": true,

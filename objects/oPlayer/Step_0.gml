@@ -14,11 +14,11 @@ if(gui_couinter%3==0){
 
 if(gui_hp_counter>7){gui_hp_counter=0;}
 vsp += grv;
-hood_cd--;
+hook_cd--;
 
-if(hood_cd<=0)
+if(hook_cd<=0)
 {
-	hood_cd=0;
+	hook_cd=0;
 }
 
 if(oPlayer.x>room_width)
@@ -90,7 +90,7 @@ if(double_jump_enabled)
 else {
 	if (place_meeting(x, y + 1 , oWall)) && (key_jump)
 		{
-			audio_play_sound(mjump,450,false);
+			audio_play_sound(m_player_jump,450,false);
 			vsp = jump_height;
 		}
 	if (place_meeting(x, y + vsp, oWall))
@@ -121,7 +121,7 @@ if(hsp!=0)
 {
 	if(step_cd==23)
 	{
-		audio_play_sound(step,100,false);
+		audio_play_sound(m_player_running,100,false);
 	}
 	step_cd--;
 	if(step_cd==0){step_cd=23;}
@@ -250,9 +250,9 @@ if(hsp !=0) image_xscale = sign(hsp);
 
 
 //hook
-if (mouse_check_button_pressed(mb_right) && hood_cd<=0) {
+if (mouse_check_button_pressed(mb_right) && hook_cd<=0) {
 	if(ammo > 0){
-		audio_play_sound(shoot,1,false);
+		audio_play_sound(m_player_shooting,1,false);
 		sprite_index = sPlayer_shooting_hook;
 	    // Stworzenie kuli na pozycji gracza
 	    var bullet = instance_create_layer(x, y, "Player", oBullet);
@@ -276,7 +276,7 @@ attack_cd -= 1;
 // Attack
 if (mouse_check_button_pressed(mb_left) && attack_cd <= 0) {
     play = true; // Attack animation
-	audio_play_sound(sword_slash_and_swing_185432,2,false);
+	audio_play_sound(m_player_attack,2,false);
     // Iterate through all instances of oEnemy
     with (oEnemy) {
         // Check if the enemy is within the player's attack range
@@ -311,7 +311,7 @@ walksp=0;
 hp_regen=0;
 if(!dead_play)
 {
-	audio_play_sound(mdeadge,1064,false);
+	audio_play_sound(m_player_dead,1064,false);
 	dead_play=true;
 }
 

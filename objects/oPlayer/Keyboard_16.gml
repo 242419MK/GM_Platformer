@@ -1,5 +1,5 @@
-/// @description Wstaw opis w tym miejscu
-// W tym edytorze możesz zapisać swój kod
+/// @description Dash
+
 if(dash_enabled)
 {
 	if (keyboard_check_pressed(vk_shift)) 

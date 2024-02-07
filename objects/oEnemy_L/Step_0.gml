@@ -71,8 +71,8 @@ if (place_meeting(x-attack_adjust, y, oPlayer) && instance_exists(oPlayer) && !g
 
     if (rage_timer == 0) // Sprawdź, czy timer osiągnął dokładnie 12
     {
-		audio_play_sound(enemy_L_attack,750,false);
-		audio_play_sound(mhitted,760,false);
+		audio_play_sound(m_enemy_L_attack,750,false);
+		audio_play_sound(m_player_hitted,760,false);
         oPlayer.hp -= damage / oPlayer.armor;
 		oPlayer_hit_melle.show = true;
 		hit_player=true;
@@ -115,7 +115,7 @@ if(hitted)
 {
 	if(!sound_played)
 	{
-		audio_play_sound(enemy_hitted,1000,false);	
+		audio_play_sound(m_enemy_hitted,1000,false);	
 		sound_played=true;
 	}
 	sprite_index = sEnemy_L_hit;

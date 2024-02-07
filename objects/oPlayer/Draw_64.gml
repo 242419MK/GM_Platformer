@@ -56,8 +56,8 @@ draw_rectangle(300, 7, 480, 25, false);
 
 if(progressPercentage>0)
 {
-draw_set_color(red);
-draw_rectangle(302, 9, 300 + 178 * progressPercentage, 23, false);
+	draw_set_color(c_yellow);
+	draw_rectangle(302, 9, 300 + 178 * progressPercentage, 23, false);
 }
 
 
@@ -68,24 +68,13 @@ draw_rectangle(270, 0, 480, 25, false); //round time
 }
 
 draw_set_color(c_black);
-var jump = "chuj";
-if(oPlayer.double_jump_enabled==true){jump=": active";}
-else {jump=": inactive"};
-draw_sprite_ext(sDouble_Jump_enable,0,530,textY+10,0.4,0.4,0,c_white,1);
-draw_text(560, textY, jump);
+draw_sprite_ext(sDouble_Jump_enable,0,510,textY+10,0.26,0.4,0,c_white,1);
 
-
-var dash = "chuj";
-if(oPlayer.dash_enabled==true){dash=": active";}
-else {dash=": inactive"};
-
-draw_sprite_ext(sDash,0,650,textY+10,0.4,0.4,0,c_white,1);
-draw_text(670, textY, + dash);
+draw_sprite_ext(sDash,0,560,textY+10,0.5,0.4,0,c_white,1);
 
 var ammunation = ammo;
-draw_sprite_ext(sHook,0,750,textY+10,0.7,0.7,0,c_white,1);
-draw_text(770, textY, string(ammunation));
-
+draw_sprite_ext(sHook,0,610,textY+10,0.7,0.7,0,c_white,1);
+draw_text(630, textY, string(ammunation));
 
 
 // Reset the draw color

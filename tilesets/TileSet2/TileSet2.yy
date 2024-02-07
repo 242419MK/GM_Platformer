@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "tileset",
-    "path": "sprites/tileset/tileset.yy",
+    "name": "sTileset_background1",
+    "path": "sprites/sTileset_background1/sTileset_background1.yy",
   },
   "spriteNoExport": false,
   "textureGroupId": {

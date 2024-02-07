@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "gniazdo",
-    "path": "sprites/gniazdo/gniazdo.yy",
+    "name": "sSpawnerGreen",
+    "path": "sprites/sSpawnerGreen/sSpawnerGreen.yy",
   },
   "spriteMaskId": null,
   "visible": true,
