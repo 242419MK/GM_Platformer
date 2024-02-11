@@ -101,6 +101,16 @@ if(dead==true)
 	instance_destroy();
 }
 
+
+if(x>room_width || x<0 || y<0 || y>room_height)
+{
+	oPlayer.red_hearths+=1;
+	oPlayer.progress+=value;
+	instance_destroy();
+}
+
+
+
 if(hitted)
 {
 	if(!sound_played)

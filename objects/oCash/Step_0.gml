@@ -1,14 +1,4 @@
-/// @description Wstaw opis w tym miejscu
-// W tym edytorze możesz zapisać swój kod
-
-red.y = starty;
-red.death_timer=10000;
-blue.y = starty;
-blue.death_timer=10000;
-purple.y = starty;
-purple.death_timer=10000;
-green.y = starty;
-green.death_timer=10000;
+/// @description Wypłata dla gracza
 
 
 wait--;

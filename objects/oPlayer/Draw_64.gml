@@ -9,11 +9,12 @@ var middle_gray = make_color_rgb(150, 150, 150);
 var lighter_gray = make_color_rgb(200, 200, 200);
 var red = make_color_rgb(255, 0, 0);
 
-draw_set_color(darker_gray);
+draw_set_color(lighter_gray);
 draw_rectangle(0, 0, 960, 30, false); //interface rectangle
 
+
+draw_rectangle(0, 0, 60, 50, false);    //hp
 draw_set_color(middle_gray);
-draw_rectangle(5, 7, 76, 25, false);    //hp
 draw_rectangle(110, 7, 170, 25, false); //hearths
 draw_rectangle(200, 7, 280, 25, false); //cash
 //draw_rectangle(490, 7, 690, 25, false); //double jump info
@@ -23,19 +24,28 @@ draw_rectangle(200, 7, 280, 25, false); //cash
 
 draw_set_color(c_black);
 
-var rounded_hp = round(oPlayer.hp / 10) * 10;
-var hp_sprite = sHP;
+var hp_sprite = sHP_1;
 
-draw_sprite_ext(hp_sprite,gui_hp_counter,20,textY+8,0.45,0.45,0,c_white,1);
+if(hp_icon==1){hp_sprite = sHP_1;}
+else if(hp_icon==2){hp_sprite = sHP_0_875;}
+else if(hp_icon==3){hp_sprite = sHP_0_75;}
+else if(hp_icon==4){hp_sprite = sHP_0_625;}
+else if(hp_icon==5){hp_sprite = sHP_0_5;}
+else if(hp_icon==6){hp_sprite = sHP_0_375;}
+else if(hp_icon==7){hp_sprite = sHP_0_25;}
+else if(hp_icon==8){hp_sprite = sHP_0_125;}
+else if(hp_icon==0){hp_sprite = sHP_0;}
 
-draw_set_font(fArial18);
-draw_text(36, textY-3, rounded_hp);
+draw_sprite_ext(hp_sprite,gui_hp_counter,30,textY+15,1.2,1,0,c_white,1);
+//var rounded_hp = round(oPlayer.hp / 10) * 10;
+//draw_set_font(fArial18);
+//draw_text(36, textY-3, rounded_hp);
 
 draw_set_font(fArial12);
 var hearths_number = oPlayer.red_hearths + oPlayer.blue_hearths + oPlayer.green_hearths + oPlayer.purple_hearths;
 
+var sprite = sRedHearth;
 for (var i = 0; i < 4; i++) {
-
 if(gui_couinter<=60){sprite = sRedHearth;}
 else if(gui_couinter<=120){sprite = sBlueHearth;}
 else if(gui_couinter<=180){sprite = sPurpleHearth;}

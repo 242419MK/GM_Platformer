@@ -22,6 +22,7 @@ jump_current = 0; //How many jumps the player has remaining
 //Player stats and cd
 play = false; //attack animation
 //HP, hp regen and armor
+hp_icon=1;
 maxhp = 200;
 hp = maxhp;
 hp_regen = 0.01;

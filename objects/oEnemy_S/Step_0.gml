@@ -107,6 +107,15 @@ if(timeEnds)
 		hp_buff=true;	
 	}
 }
+
+
+if(x>room_width || x<0 || y<0 || y>room_height)
+{
+	oPlayer.blue_hearths+=1;
+	oPlayer.progress+=value;
+	instance_destroy();
+}
+
 		
 
 if(dead==true)

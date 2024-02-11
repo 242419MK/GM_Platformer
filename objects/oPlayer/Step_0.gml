@@ -8,6 +8,16 @@ hsp = move * walksp;
 dash_cd--;
 gui_couinter++;
 
+if (hp <= maxhp && hp > 0.875 * maxhp) { hp_icon = 1; } 
+else if (hp <= 0.875 * maxhp && hp > 0.75 * maxhp) { hp_icon = 2; } 
+else if (hp <= 0.75 * maxhp && hp > 0.625 * maxhp) { hp_icon = 3; } 
+else if (hp <= 0.625 * maxhp && hp > 0.5 * maxhp) { hp_icon = 4; } 
+else if (hp <= 0.5 * maxhp && hp > 0.375 * maxhp) { hp_icon = 5; } 
+else if (hp <= 0.375 * maxhp && hp > 0.25 * maxhp) { hp_icon = 6; } 
+else if (hp <= 0.25 * maxhp && hp > 0.125 * maxhp) { hp_icon = 7; } 
+else if (hp <= 0.125 * maxhp && hp > 0) { hp_icon = 8; } 
+else if (hp <= 0) { hp_icon = 0; }
+
 if(gui_couinter%3==0){
 	gui_hp_counter++;
 }
@@ -132,7 +142,6 @@ x = x + hsp;
 
 
 //Animation
-
 if(!place_meeting(x,y+1,oWall))
 {		
 		if (play)

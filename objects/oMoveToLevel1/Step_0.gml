@@ -10,6 +10,9 @@ if (place_meeting(x, y, oPlayer))
 	oPlayer.overtime=0;
 	oPlayer.progress=0;
 	oPlayer.red_hearths=0;
+	oPlayer.blue_hearths=0;
+	oPlayer.green_hearths=0;
+	oPlayer.purple_hearths=0;
 	oPlayer.maxAmmo=1;
 	oPlayer.ammo=1;
 }

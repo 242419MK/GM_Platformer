@@ -115,6 +115,15 @@ if (shooting_timer <= 0 && !grabbed && !hitted)
 	}
 }
 
+
+if(x>room_width || x<0 || y<0 || y>room_height)
+{
+	oPlayer.purple_hearths+=1;
+	oPlayer.progress+=value;
+	instance_destroy();
+}
+
+
 if(dead==true)
 {
 	var reward = instance_create_layer(x, y-30, "Player", oPurpleHearth);

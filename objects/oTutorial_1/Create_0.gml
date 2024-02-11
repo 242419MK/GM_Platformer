@@ -6,5 +6,5 @@ wait_counter=120;
 
 enemy.fullHp=10000;
 enemy.hp=enemy.fullHp;
-enemy.value=0;
+enemy.value=10;
 open=false;

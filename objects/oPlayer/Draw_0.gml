@@ -9,11 +9,11 @@ var healthBarWidth = barWidth * healthPercentage;
 
 // Set the color for the background (black)
 draw_set_color(c_black);
-draw_rectangle(x - barWidth / 2, y - 50, x + barWidth / 2, y - 45, false);
+//draw_rectangle(x - barWidth / 2, y - 50, x + barWidth / 2, y - 45, false);
 
 // Set the color for the health portion (red)
 draw_set_color(c_red);
-draw_rectangle(x - barWidth / 2, y - 50, x - barWidth / 2 + healthBarWidth, y - 45, false);
+//draw_rectangle(x - barWidth / 2, y - 50, x - barWidth / 2 + healthBarWidth, y - 45, false);
 
 // Reset the draw color
 draw_set_color(c_white);

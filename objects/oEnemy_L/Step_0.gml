@@ -128,6 +128,18 @@ if(hitted)
 	}
 }
 
+if(x+100>room_width){x=room_width-150;}
+if(x-100<0){x=150;}
+if(y+100>room_height){y=room_height-150;}
+if(y-100<0){y=150;}
+
+if(x>room_width || x<0 || y<0 || y>room_height)
+{
+	instance_destroy();
+	oPlayer.green_hearths+=1;
+	oPlayer.progress+=value;
+}
+
 
 //death logic, drop a green hearths, and 2 more if overtime > 1min
 if(dead==true)
