@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "Shake",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Skrypty",
-    "path": "folders/Skrypty.yy",
+  "$GMScript":"",
+  "%Name":"Shake",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Shake",
+  "parent":{
+    "name":"Skrypty",
+    "path":"folders/Skrypty.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

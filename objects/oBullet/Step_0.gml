@@ -28,6 +28,8 @@ if (place_meeting(x, y, oWall))
 {	
 	 if (instance_exists(oPlayer))
 	 {
+		 //oPlayer.speed = 10 + speed_bonus; // Prędkość przyciągania wroga (możesz dostosować)
+	     //oPlayer.direction = point_direction(attached_enemy.x, attached_enemy.y, oPlayer.x, oPlayer.y - 24);
 		speed = 10 + speed_bonus;
 		direction = point_direction(x, y, oPlayer.x, oPlayer.y); // Change direction to player
 	 }

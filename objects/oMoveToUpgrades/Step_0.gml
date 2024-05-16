@@ -9,7 +9,7 @@ if (place_meeting(x, y, oPlayer))
 	oPlayer.hp = oPlayer.maxhp;
 }
 
-if(instance_exists(oPlayer))
+if(instance_exists(oPlayer) || oPlayer.progress>=oPlayer.progressMax)
 {
 	if(oPlayer.overtime>0)
 	{

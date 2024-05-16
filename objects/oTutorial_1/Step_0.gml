@@ -7,7 +7,8 @@ if(!instance_exists(oEnemy_A))
 	if(wait_counter<=0)
 	{
 		enemy =  instance_create_layer(x, y, "Enemies", oEnemy_A);
-		enemy.value=10;
+		enemy.value=0;
+		enemy.damage = 12;
 		wait_counter=120;
 	}
 }

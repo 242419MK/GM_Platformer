@@ -8,6 +8,8 @@ hsp = move * walksp;
 dash_cd--;
 gui_couinter++;
 
+
+
 if (hp <= maxhp && hp > 0.875 * maxhp) { hp_icon = 1; } 
 else if (hp <= 0.875 * maxhp && hp > 0.75 * maxhp) { hp_icon = 2; } 
 else if (hp <= 0.75 * maxhp && hp > 0.625 * maxhp) { hp_icon = 3; } 
@@ -74,46 +76,54 @@ if(instance_exists(oEnemy))
 		oEnemy_L.better_reward=true;
 	}
 }
-
+var hold_time = 0;
 //jumps
-if(double_jump_enabled)
-	{
-	if(keyboard_check_pressed(vk_space) && jump_current > 0)
-		{
-			vsp = jump_height;
-			jump_current--;
-		}
-	if(place_meeting(x, y + vsp, oWall))
-		{
-			while(!place_meeting(x, y + sign(vsp), oWall))
-			{
-				y += sign(vsp);
-			}
-				if(vsp > 0)
-				{
-					jump_current = jump_number;
-				}
-			vsp = 0;
-		}
-		y = y + vsp;
-		}
-else {
-	if (place_meeting(x, y + 1 , oWall)) && (key_jump)
-		{
-			audio_play_sound(m_player_jump,450,false);
-			vsp = jump_height;
-		}
-	if (place_meeting(x, y + vsp, oWall))
-	{
-		while(!place_meeting(x, y+sign(vsp), oWall))
-		{
-			y = y + sign(vsp);
-		}
-		vsp = 0;
-	}
-	y = y + vsp;
+if (keyboard_check(vk_space) && !jumping && jump_current > 0)
+{
+    // Zwiększanie bieżącej wysokości skoku
+    if (current_jump_height < max_jump_height)
+    {
+        current_jump_height += jump_height_increment;
+    }
+}
+else
+{
+    // W momencie zwolnienia spacji, wykonaj skok
+    if (current_jump_height > 0)
+    {
+        vsp = -current_jump_height; // Ustaw prędkość skoku
+        current_jump_height = 0; // Zresetuj bieżącą wysokość skoku
+        jumping = true; // Ustaw flagę skoku na true
+        jump_current--; // Zmniejsz liczbę dostępnych skoków
+    }
 }
 
+// Sprawdź kolizje z podłożem
+if (place_meeting(x, y + vsp, oWall))
+{
+    while (!place_meeting(x, y + sign(vsp), oWall))
+    {
+        y += sign(vsp);
+    }
+    if (vsp > 0)
+    {
+        jump_current = jump_number;
+    }
+    vsp = 0;
+    jumping = false; // Zresetuj flagę skoku po zakończeniu ruchu w górę
+}
+else
+{
+    // Aktualizuj pozycję Y
+    y += vsp;
+}
+
+// Sprawdź, czy gracz stoi na ziemi
+if (place_meeting(x, y + 1, oWall))
+{
+    jumping = false; // Zresetuj flagę skoku, jeśli gracz jest na ziemi
+}
+//
 
 
 
@@ -289,7 +299,7 @@ if (mouse_check_button_pressed(mb_left) && attack_cd <= 0) {
     // Iterate through all instances of oEnemy
     with (oEnemy) {
         // Check if the enemy is within the player's attack range
-        if (point_distance(x, y, oPlayer.x, oPlayer.y) < oPlayer.attack_range) {
+        if (point_distance(x, y, oPlayer.x, oPlayer.y) < oPlayer.attack_range && grabbed==true) {
             // Apply the attack logic to each enemy
 			hitted=true;
             hp -= oPlayer.attack_damage;

@@ -2,7 +2,7 @@
 hsp = 0;
 vsp = 0;
 grv = 0.7;
-walksp = 4;
+walksp = 6;
 key_left = keyboard_check(ord("A"));
 key_right = keyboard_check(ord("D"));
 step_cd = 23;
@@ -13,11 +13,18 @@ dash_cd = 0;
 dash_length = 50;
 //Jumping variables
 key_jump = keyboard_check_pressed(vk_space);
-jump_height = -16;
-double_jump_enabled = false;
+double_jump_enabled = true;
+max_hold_time = 60;
+max_jump_height = 20; // Maksymalna wysokość skoku
+jump_height_increment = 3; // Wartość, o którą zwiększa się wysokość skoku co klatkę przytrzymania spacji
+jumping = false; // Flaga określająca, czy gracz jest w trakcie skoku
+current_jump_height = 0; // Bieżąca wysokość skoku
+
+
 jump_number = 2; //How many jumps the player can make
 jump_current = 0; //How many jumps the player has remaining
 
+lvl = 0;
 
 //Player stats and cd
 play = false; //attack animation

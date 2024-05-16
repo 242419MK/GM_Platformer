@@ -10,7 +10,8 @@ var barHeight = 2; // Set the height of the health bar
 var healthBarWidth = barWidth * healthPercentage;
 
 // Set the color for the background (black)
-draw_set_color(c_black);
+var middle_gray = make_color_rgb(150, 150, 150);
+draw_set_color(middle_gray);
 draw_rectangle(x - barWidth / 2, y - 90, x + barWidth / 2, y - 95, false);
 
 // Set the color for the health portion (red)
