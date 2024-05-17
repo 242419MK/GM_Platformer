@@ -1,7 +1,7 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
 
-if(!instance_exists(oEnemy_A))
+if(!instance_exists(oEnemy_A) && enemies_killed < enemies_killed_max)
 {
 	wait_counter--;
 	if(wait_counter<=0)
@@ -13,6 +13,10 @@ if(!instance_exists(oEnemy_A))
 	}
 }
 
+if(oPlayer.red_hearths>enemies_killed)
+{
+	enemies_killed++;
+}
 
 if(instance_exists(oEnemy_A))
 {

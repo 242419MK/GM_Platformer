@@ -120,7 +120,7 @@ if(x>room_width || x<0 || y<0 || y>room_height)
 
 if(dead==true)
 {
-	var reward = instance_create_layer(x, y-30, "Player", oBlueHearth);
+	//var reward = instance_create_layer(x, y-30, "Player", oBlueHearth);
 	if(grabbed)
 	{
 		var reward2 = instance_create_layer(x+20, y-20, "Player", oBlueHearth);

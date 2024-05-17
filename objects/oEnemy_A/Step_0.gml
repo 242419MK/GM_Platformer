@@ -89,7 +89,7 @@ if(grabbed && place_meeting(x,y,oPlayer))
 	
 if(dead==true)
 {
-	var reward = instance_create_layer(x, y-30, "Player", oRedHearth);
+	//var reward = instance_create_layer(x, y-30, "Player", oRedHearth);
 	if(grabbed)
 	{
 		var reward2 = instance_create_layer(x+20, y-20, "Player", oRedHearth);

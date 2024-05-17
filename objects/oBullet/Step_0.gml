@@ -17,19 +17,34 @@ image_speed = 0;
 // Jeśli kula nie ma jeszcze ustawionego kierunku i prędkości
 if (!direction_set and instance_exists(oPlayer))
 {
+	// Sprawdzenie kierunku gracza i haka
+	var key_left = keyboard_check(ord("A"));
+	var key_right = keyboard_check(ord("D"));
+	
+	//Gracz idzie w prawo, hak w prawo
+	if (key_right == 1 && key_left=0 && oCrosshair.x > oPlayer.x) {hook_speed = 5;} 
+		
+	//Gracz idzie w prawo, hak w lewo
+	else if (key_right == 1 && key_left=0 && oCrosshair.x < oPlayer.x) {hook_speed = -5;}
+		
+	//Gracz idzie w lewo, hak w prawo
+	else if (key_right == 0 && key_left == 1 && oCrosshair.x > oPlayer.x) {hook_speed = -5;} 
+		
+	//Gracz idzie w lewo, hak w lewo
+	else if (key_right == 0 && key_left == 1 && oCrosshair.x < oPlayer.x) {	hook_speed = 5;}
+		
     // Kierunek ruchu kuli w momencie utworzenia (stały)
     direction = point_direction(x, y, oCrosshair.x, oCrosshair.y);
-    speed = 10 + speed_bonus;
+    speed = 10 + hook_speed + speed_bonus;
     direction_set = true;
 }
+
 
 
 if (place_meeting(x, y, oWall))
 {	
 	 if (instance_exists(oPlayer))
 	 {
-		 //oPlayer.speed = 10 + speed_bonus; // Prędkość przyciągania wroga (możesz dostosować)
-	     //oPlayer.direction = point_direction(attached_enemy.x, attached_enemy.y, oPlayer.x, oPlayer.y - 24);
 		speed = 10 + speed_bonus;
 		direction = point_direction(x, y, oPlayer.x, oPlayer.y); // Change direction to player
 	 }
@@ -79,6 +94,23 @@ else {
         if (destroy_timer <= 0 && instance_exists(oPlayer)) 
 			{
             direction = point_direction(x, y, oPlayer.x, oPlayer.y); // Adjust direction to player
+			// Sprawdzenie kierunku gracza i haka
+			var key_left = keyboard_check(ord("A"));
+			var key_right = keyboard_check(ord("D"));
+			
+			//Gracz idzie w prawo, hak leci z prawej
+			if (key_right == 1 && key_left=0 && x > oPlayer.x) {hook_speed = -5;} 
+		
+			//Gracz idzie w prawo, hak leci z lewej
+			else if (key_right == 1 && key_left=0 && x < oPlayer.x) {hook_speed = 5;}
+		
+			//Gracz idzie w lewo, hak leci z prawej
+			else if (key_right == 0 && key_left == 1 && x > oPlayer.x) {hook_speed = 5;} 
+		
+			//Gracz idzie w lewo, hak leci z lewej
+			else if (key_right == 0 && key_left == 1 && x < oPlayer.x) {	hook_speed = -5;}
+			
+			speed = 10 + hook_speed;
 			}
 		}
 	if (instance_exists(oPlayer)) 

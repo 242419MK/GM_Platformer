@@ -1,3 +1,4 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
-progress = progressMax;
+game_over=false;
+ending = false;

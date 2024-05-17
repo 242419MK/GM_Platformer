@@ -2,12 +2,12 @@
 hsp = 0;
 vsp = 0;
 grv = 0.7;
-walksp = 6;
+walksp = 5;
 key_left = keyboard_check(ord("A"));
 key_right = keyboard_check(ord("D"));
 step_cd = 23;
 //Dash variables
-dash_enabled = false;
+dash_enabled = true;
 dash_max_cd = 300;
 dash_cd = 0;
 dash_length = 50;

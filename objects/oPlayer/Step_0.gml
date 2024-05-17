@@ -35,12 +35,24 @@ if(hook_cd<=0)
 
 if(oPlayer.x>room_width)
 {
+	var adjust =0;
 	oPlayer.x=room_width-200;
+	while(place_meeting(x,y,oWall))
+	{
+	adjust-=50;
+	oPlayer.x=adjust;
+	}
 }
 
 if(oPlayer.x<0)
 {
-	oPlayer.x=200;
+	var adjust =0;
+	oPlayer.x=200
+	while(place_meeting(x,y,oWall))
+	{
+	adjust+=50;
+	oPlayer.x=adjust;
+	}
 }
 		
 if (progress > progressMax) 
@@ -93,7 +105,7 @@ else
     {
         vsp = -current_jump_height; // Ustaw prędkość skoku
         current_jump_height = 0; // Zresetuj bieżącą wysokość skoku
-        jumping = true; // Ustaw flagę skoku na true
+        jumping = false; // Ustaw flagę skoku na true
         jump_current--; // Zmniejsz liczbę dostępnych skoków
     }
 }
@@ -123,7 +135,6 @@ if (place_meeting(x, y + 1, oWall))
 {
     jumping = false; // Zresetuj flagę skoku, jeśli gracz jest na ziemi
 }
-//
 
 
 
@@ -342,11 +353,8 @@ deadcounter+=0.25;
 if (deadcounter >= 20) 
 	{
 		instance_destroy(oPlayer);
-
-		room_goto(Menu)
-	
+		oTheEnd.game_over=true;	
 	}
-
 }
 
 if(hp<maxhp)hp = hp + hp_regen;

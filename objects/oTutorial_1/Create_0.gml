@@ -8,3 +8,5 @@ enemy.fullHp=100;
 enemy.hp=enemy.fullHp;
 enemy.value=0;
 open=false;
+enemies_killed = 0;
+enemies_killed_max = 10;
