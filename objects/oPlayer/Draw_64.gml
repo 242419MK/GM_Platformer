@@ -52,10 +52,10 @@ else if(gui_couinter<=180){sprite = sPurpleHearth;}
 else if(gui_couinter<=240){sprite = sGreenHearth;	gui_couinter=0}
 
 draw_sprite_ext(sprite,0,150,17,0.5,0.35,0,c_white,1);
-draw_text(120, textY, string(hearths_number));
+draw_text(120, textY+10, string(hearths_number));
 }
 var money = cash;
-draw_text(200, textY, "$: " + string(money));
+draw_text(200, textY+10, "$: " + string(money));
 
 
 
@@ -84,7 +84,7 @@ draw_sprite_ext(sDash,0,560,textY+10,0.5,0.4,0,c_white,1);
 
 var ammunation = ammo;
 draw_sprite_ext(sHook,0,610,textY+10,0.7,0.7,0,c_white,1);
-draw_text(630, textY, string(ammunation));
+draw_text(630, textY+10, string(ammunation));
 
 
 // Reset the draw color

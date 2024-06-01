@@ -28,6 +28,7 @@ lvl = 0;
 
 //Player stats and cd
 play = false; //attack animation
+player_name = "";
 //HP, hp regen and armor
 hp_icon=1;
 maxhp = 200;

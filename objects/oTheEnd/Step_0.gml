@@ -3,15 +3,16 @@
 if(ending=false)
 {
 	x = oCamera.x
-	y = oCamera.y-200
+	y = oCamera.y-100
 }
 
 if(game_over=true)
 {
 	visible=true;
 	if(keyboard_check(ord("G")))
-	{
-		room_goto(Menu);
+	{ 
+		instance_destroy(oPlayer);
+		game_end();
 		ending = true;
 	}
 }

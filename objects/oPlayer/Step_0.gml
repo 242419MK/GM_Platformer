@@ -1,10 +1,13 @@
 //Movement and wall collisions
+if(dead_play=false)
+{
 key_left = keyboard_check(ord("A"));
 key_right = keyboard_check(ord("D"));
 key_jump = keyboard_check_pressed(vk_space);
 
 var move = key_right - key_left;
 hsp = move * walksp;
+}
 dash_cd--;
 gui_couinter++;
 
@@ -347,12 +350,17 @@ if(!dead_play)
 
 sprite_index = sPlayer_dead;
 image_speed=0;
-image_index=deadcounter;
-deadcounter+=0.25;
+if (deadcounter < 14) {
+    image_index = deadcounter;
+    deadcounter += 0.25;
+} else {
+    // Zapętlanie ostatnich 6 klatek
+    image_index = 14 + (deadcounter - 14) mod 6;
+    deadcounter += 0.25;
+}
 
 if (deadcounter >= 20) 
 	{
-		instance_destroy(oPlayer);
 		oTheEnd.game_over=true;	
 	}
 }
