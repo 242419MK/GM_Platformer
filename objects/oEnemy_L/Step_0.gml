@@ -146,6 +146,7 @@ if(instance_exists(oPlayer))
 	//death logic, drop a green hearths, and 2 more if overtime > 1min
 	if(dead==true)
 	{
+		oPlayer_info.enemies_killed=oPlayer_info.enemies_killed+1;
 		var reward = instance_create_layer(x, y-30, "Player", oGreenHearth);
 		if(grabbed)
 		{

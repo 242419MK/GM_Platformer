@@ -342,6 +342,11 @@ if (mouse_check_button_pressed(mb_left) && attack_cd <= 0) {
 if(hp<0){
 walksp=0;
 hp_regen=0;
+attack_cd=2000;
+ammo=0;
+maxAmmo=0;
+max_jump_height=0;
+
 if(!dead_play)
 {
 	audio_play_sound(m_player_dead,1064,false);
@@ -362,6 +367,7 @@ if (deadcounter < 14) {
 if (deadcounter >= 20) 
 	{
 		oTheEnd.game_over=true;	
+		oPlayer_info.count_score = true;
 	}
 }
 

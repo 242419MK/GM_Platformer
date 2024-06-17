@@ -1,23 +1,41 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
+if(instance_exists(oPlayer))
+{
+	x = oPlayer.x;
+	y=oPlayer.y+100;
+}
 if(room==Level1)
 {
 	start_counting=true;
 }
+
 if(start_counting)
 {
 	player_run_time=player_run_time+1/60;
 }
-if (!instance_exists(oPlayer) and final_time_achieved == false and (room != Menu and room != Menu_Player_Name and room != Tutorial_Room))
+
+if (count_score==true and final_time_achieved == false)
 {
-    final_time = player_run_time;
-    final_time_achieved = true;
+final_time = player_run_time;
+final_time_achieved = true;
+start_counting=false;
+	
+if (final_time < 600) {
+	time_factor = 0.01 + (2 - 0.01) * (final_time / 600);
+} else if (final_time < 1200) {
+	time_factor = 2 - (2 - 0.01) * ((final_time - 600) / 600);
+} else {
+	time_factor = 0.01;
+}
+
+player_score = enemies_killed * time_factor
 }
 
 
 if(room!=Menu_Player_Name)
 {
-	visible=false;
+	sprite_index = sText_box_2;
 }
 
 if(instance_exists(oPlayer))
@@ -53,3 +71,13 @@ if(stop_typing=false)
 		delete_timer++;
 	}
 }
+
+
+if(instance_exists(oTheEnd))
+{
+	if(oTheEnd.game_over==true)
+{
+	visible=false;
+}
+}
+

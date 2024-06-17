@@ -89,6 +89,7 @@ if(grabbed && place_meeting(x,y,oPlayer))
 	
 if(dead==true)
 {
+	oPlayer_info.enemies_killed=oPlayer_info.enemies_killed+1;
 	//var reward = instance_create_layer(x, y-30, "Player", oRedHearth);
 	if(grabbed)
 	{

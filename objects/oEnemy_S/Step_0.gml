@@ -120,6 +120,7 @@ if(x>room_width || x<0 || y<0 || y>room_height)
 
 if(dead==true)
 {
+	oPlayer_info.enemies_killed=oPlayer_info.enemies_killed+1;
 	//var reward = instance_create_layer(x, y-30, "Player", oBlueHearth);
 	if(grabbed)
 	{
