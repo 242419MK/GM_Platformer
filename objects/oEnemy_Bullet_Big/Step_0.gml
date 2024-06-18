@@ -1,5 +1,9 @@
 if(instance_exists(oPlayer))
 {
+	if(room==Level1)speed=4;
+	if(room==Level2)speed=5;
+	if(room==Level3)speed=6;
+	if(room==LevelBoss)speed=6;
 	image_angle +=5;
 
 	if (place_meeting(x, y, oWall)) or (death_timer == 0) {
@@ -8,7 +12,7 @@ if(instance_exists(oPlayer))
 
 	if(timeEnds==true)
 	{
-		speed = 5;
+		speed = speed + 1;
 		death_timer = 10;
 	}
 

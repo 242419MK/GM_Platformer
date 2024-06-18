@@ -2,7 +2,7 @@
 // W tym edytorze możesz zapisać swój kod
 startx = x;
 starty = y;
-max_enemies_spawned = 5;
+max_enemies_spawned = 8;
 spawned_enemies=0;
 counter=0;
 spawn_time = 300;

@@ -1,5 +1,9 @@
+
+
+
 if(instance_exists(oPlayer))
 {
+	
 	image_angle +=1;
 
 	if (place_meeting(x, y, oWall)) or (death_timer == 0) {
@@ -8,7 +12,7 @@ if(instance_exists(oPlayer))
 
 	if(timeEnds==true)
 	{
-		speed = 7;
+		speed = speed+1;
 		death_timer = 10;
 	}
 

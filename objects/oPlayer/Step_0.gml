@@ -73,22 +73,46 @@ if(instance_exists(oEnemy))
 	if(progress == progressMax)
 	{
 		oPlatformUpMax.speed_value = 3;
-		oEnemy_S.timeEnds = true;
-		oEnemy_S_2.timeEnds = true;
+		if(instance_exists(oEnemy_S))
+		{
+			oEnemy_S.timeEnds = true;
+		}
+		if(instance_exists(oEnemy_S_2))
+		{
+			oEnemy_S_2.timeEnds = true;
+		}
 	}
 
 	if(overtime>=1200)
 	{
+		if(instance_exists(oEnemy_A))
+		{
 		oEnemy_A.timeEnds = true;
+		}
 	}
 
 	if(overtime>=3600)
 	{
-		oEnemy_L.timeEnds = true;
-		oEnemy_A.better_reward=true;
-		oEnemy_S.better_reward=true;
-		oEnemy_S_2.better_reward=true;
-		oEnemy_L.better_reward=true;
+		if(instance_exists(oEnemy_L))
+		{
+			oEnemy_L.timeEnds = true;
+			oEnemy_L.better_reward=true;
+		}
+		if(instance_exists(oEnemy_A))
+		{
+			oEnemy_A.better_reward=true;
+		}
+		
+		if(instance_exists(oEnemy_S))
+		{
+			oEnemy_S.better_reward=true;
+		}
+		
+		if(instance_exists(oEnemy_S_2))
+		{
+			oEnemy_S_2.better_reward=true;
+		}
+		
 	}
 }
 var hold_time = 0;

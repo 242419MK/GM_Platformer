@@ -3,7 +3,7 @@
 x = startx;
 y = starty;
 counter++;
-if(counter>=300 && spawned_enemies<max_enemies_spawned)
+if(counter>=420 && spawned_enemies<max_enemies_spawned)
 {
 	var enemy = instance_create_layer(x, y, "Enemies", oEnemy_L);
 	counter=0;

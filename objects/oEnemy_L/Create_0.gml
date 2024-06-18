@@ -16,7 +16,7 @@ speed = 2; // Adjust speed as needed
 max_range = 500; // Maximum distance from spawn point
 player_range = 300; // Distance to start following the player
 follow_speed = 0.1; // Smoothing factor for following the player
-value = 9;
+value = 15;
 prevx = x;
 attack_adjust = 0;
 damage = 10;
@@ -34,3 +34,24 @@ better_reward = false;
 rage_speed = 3;
 
 entityOnMinimap = true;
+
+if(room==Tutorial_Room)
+{
+    image_xscale = 1.0;
+    image_yscale = 1.0;
+}
+else if(room==Level1)
+{
+	image_xscale = 1.25;
+    image_yscale = 1.25;
+}
+else if(room==Level2)
+{
+	image_xscale = 1.37;
+    image_yscale = 1.37;
+}
+else if(room==Level3 or LevelBoss)
+{
+	image_xscale = 1.5;
+    image_yscale = 1.5;
+}

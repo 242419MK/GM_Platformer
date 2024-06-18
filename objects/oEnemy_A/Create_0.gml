@@ -14,7 +14,7 @@ rage_timer = 0;
 rage = false;
 damage = 3;
 hit_player=false;
-value = 2;
+value = 4;
 
 dead = false;
 

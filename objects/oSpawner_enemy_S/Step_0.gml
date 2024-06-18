@@ -3,15 +3,15 @@
 x = startx;
 y = starty;
 counter++;
-if(counter>=300 && spawned_enemies<max_enemies_spawned)
+if(counter>=360 && spawned_enemies<max_enemies_spawned)
 {
 	var spawn =oEnemy_S
 	if(spawned_enemies mod 2 = 1)
 		{spawn =oEnemy_S}
 	else 
 		{spawn =oEnemy_S_2}
-		
-	var enemy = instance_create_layer(x, y, "Enemies", spawn);
+	var random_value = irandom_range(-6, 6);
+	var enemy = instance_create_layer(x+10*random_value, y, "Enemies", spawn);
 	counter=0;
 	spawned_enemies++;
 }

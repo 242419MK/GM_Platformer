@@ -15,8 +15,8 @@ dash_length = 50;
 key_jump = keyboard_check_pressed(vk_space);
 double_jump_enabled = true;
 max_hold_time = 60;
-max_jump_height = 20; // Maksymalna wysokość skoku
-jump_height_increment = 3; // Wartość, o którą zwiększa się wysokość skoku co klatkę przytrzymania spacji
+max_jump_height = 16; // Maksymalna wysokość skoku
+jump_height_increment = 2; // Wartość, o którą zwiększa się wysokość skoku co klatkę przytrzymania spacji
 jumping = false; // Flaga określająca, czy gracz jest w trakcie skoku
 current_jump_height = 0; // Bieżąca wysokość skoku
 
@@ -71,6 +71,6 @@ entityOnMinimap= true;
 menu_cd=60;
 overtime = 0;
 progress = 0;
-progressMax=200;
+progressMax=150;
 
 
