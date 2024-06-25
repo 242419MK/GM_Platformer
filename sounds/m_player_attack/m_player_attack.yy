@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.584,
+  "duration":1.278771,
   "name":"m_player_attack",
   "parent":{
     "name":"Player",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"m_player_attack.mp3",
+  "soundFile":"m_player_attack.wav",
   "type":0,
-  "volume":0.2,
+  "volume":1.0,
 }

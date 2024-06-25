@@ -7,9 +7,11 @@ if(visible)
 	{
 		if(oPlayer.cash >= price)
 		{
+			oReroll_upg3.bought=true;
 			oPlayer.cash -= price;
-			oPlayer.jump_height -= 2;
-		
+			oPlayer.max_jump_height += 2;
+			oPlayer.jump_height_increment += 0.5;
+			
 			transactionCompleted = true;
 			with(oBought)
 			{
@@ -33,6 +35,7 @@ if(visible)
 	}
 	else 
 	{
+		
 		with(oUnable_to_buy)
 		{
 		if(place_meeting(x,y, oJump_height_up))

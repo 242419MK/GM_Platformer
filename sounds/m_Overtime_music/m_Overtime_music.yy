@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":163.08244,
+  "duration":7.899048,
   "name":"m_Overtime_music",
   "parent":{
     "name":"Music",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"m_Overtime_music.mp3",
+  "soundFile":"m_Overtime_music.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.3,
 }

@@ -7,6 +7,7 @@ if(visible)
 	{
 		if(oPlayer.cash >= price)
 		{
+			oReroll_upg2.bought=true;
 			oPlayer.cash -= price;
 			oPlayer.hook_speed_bonus += 2;
 		
@@ -34,6 +35,7 @@ if(visible)
 	}
 	else 
 	{
+		
 		with(oUnable_to_buy)
 		{
 		if(place_meeting(x,y, oHook_speed_up))

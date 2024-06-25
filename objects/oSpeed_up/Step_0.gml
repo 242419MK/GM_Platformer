@@ -7,6 +7,7 @@ if(visible)
 	{
 		if(oPlayer.cash >= price)
 		{
+			oReroll_upg3.bought=true;
 			oPlayer.cash -= price;
 			oPlayer.walksp += 1;
 		
@@ -33,6 +34,7 @@ if(visible)
 	}
 	else 
 	{
+		
 		with(oUnable_to_buy)
 		{
 		if(place_meeting(x,y, oSpeed_up))

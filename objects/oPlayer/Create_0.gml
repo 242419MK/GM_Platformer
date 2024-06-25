@@ -7,7 +7,7 @@ key_left = keyboard_check(ord("A"));
 key_right = keyboard_check(ord("D"));
 step_cd = 23;
 //Dash variables
-dash_enabled = true;
+dash_enabled = false;
 dash_max_cd = 300;
 dash_cd = 0;
 dash_length = 50;
@@ -47,14 +47,15 @@ hook_cd=10;
 hook_speed_bonus = 0;
 hook_long_bonus = 0;
 grabbing_wall = false;
-
-
+//Shield timer
+shield_timer=300;
+shield_counter=0;
 //Hearths and cash variables
 red_hearths = 0;
 blue_hearths = 0;
 purple_hearths = 0;
 green_hearths = 0;
-cash = 0;
+cash = 1000;
 
 
 //Player damaged and death

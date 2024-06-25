@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"oDMG_info",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"oDMG_info",
   "overriddenProperties":[],
@@ -28,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sDMG_up_upg_info",
-    "path":"sprites/sDMG_up_upg_info/sDMG_up_upg_info.yy",
+    "name":"sShield_cd_info",
+    "path":"sprites/sShield_cd_info/sShield_cd_info.yy",
   },
   "spriteMaskId":null,
   "visible":false,

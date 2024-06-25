@@ -7,6 +7,7 @@ if(visible)
 	{
 		if(oPlayer.cash >= price)
 		{
+			oReroll_upg4.bought=true;
 			oPlayer.cash -= price;
 			oPlayer.progressMax += 20;
 		
@@ -33,6 +34,7 @@ if(visible)
 	}
 	else 
 	{
+		
 		with(oUnable_to_buy)
 		{
 		if(place_meeting(x,y, oLonger_Rounds))

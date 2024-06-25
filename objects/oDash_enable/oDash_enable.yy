@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sDash_enable",
-    "path":"sprites/sDash_enable/sDash_enable.yy",
+    "name":"sDash_enable_up",
+    "path":"sprites/sDash_enable_up/sDash_enable_up.yy",
   },
   "spriteMaskId":null,
   "visible":false,

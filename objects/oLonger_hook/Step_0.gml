@@ -7,8 +7,9 @@ if(visible)
 	{
 		if(oPlayer.cash >= price)
 		{
+			oReroll_upg2.bought=true;
 			oPlayer.cash -= price;
-			oPlayer.hook_long_bonus += 10;
+			oPlayer.hook_long_bonus += 20;
 		
 			transactionCompleted = true;
 			with(oBought)
@@ -33,6 +34,7 @@ if(visible)
 	}
 	else 
 	{
+		
 		with(oUnable_to_buy)
 		{
 		if(place_meeting(x,y, oLonger_hook))

@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"btn_leaderboard",
-    "path":"sprites/btn_leaderboard/btn_leaderboard.yy",
+    "name":"btn_credits",
+    "path":"sprites/btn_credits/btn_credits.yy",
   },
   "spriteMaskId":null,
   "visible":true,

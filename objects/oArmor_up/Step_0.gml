@@ -7,6 +7,7 @@ if(visible)
 	{
 		if(oPlayer.cash >= price)
 		{
+			oReroll_upg1.bought=true;
 			oPlayer.cash -= price;
 			oPlayer.armor += 0.25;
 		
@@ -34,6 +35,7 @@ if(visible)
 	}
 	else 
 	{
+		
 		with(oUnable_to_buy)
 		{
 		if(place_meeting(x,y, oArmor_up))

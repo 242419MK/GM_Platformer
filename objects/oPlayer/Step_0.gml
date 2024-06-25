@@ -115,6 +115,7 @@ if(instance_exists(oEnemy))
 		
 	}
 }
+
 var hold_time = 0;
 //jumps
 if (keyboard_check(vk_space) && !jumping && jump_current > 0)
@@ -186,7 +187,9 @@ if(hsp!=0)
 }
 x = x + hsp;
 
-
+if (shield_counter > 0) {
+    shield_counter--;
+}
 
 
 //Animation

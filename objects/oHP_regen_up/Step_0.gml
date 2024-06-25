@@ -7,6 +7,7 @@ if(visible)
 	{
 		if(oPlayer.cash >= price)
 		{
+			oReroll_upg1.bought=true;
 			oPlayer.cash -= price;
 			oPlayer.hp_regen += 0.05;
 		
@@ -35,6 +36,7 @@ if(visible)
 	}
 	else 
 	{
+		
 		with(oUnable_to_buy)
 		{
 		if(place_meeting(x,y, oHP_regen_up))
