@@ -3,8 +3,7 @@
 
 play = 1;
 
-audio_play_sound(m_background_music, 1000, true);
-
+sound = audio_play_sound(m_background_music, 1001, true);
 
 
 

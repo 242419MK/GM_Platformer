@@ -13,7 +13,7 @@ dash_cd = 0;
 dash_length = 50;
 //Jumping variables
 key_jump = keyboard_check_pressed(vk_space);
-double_jump_enabled = true;
+double_jump_enabled = false;
 max_hold_time = 60;
 max_jump_height = 16; // Maksymalna wysokość skoku
 jump_height_increment = 2; // Wartość, o którą zwiększa się wysokość skoku co klatkę przytrzymania spacji
@@ -21,7 +21,7 @@ jumping = false; // Flaga określająca, czy gracz jest w trakcie skoku
 current_jump_height = 0; // Bieżąca wysokość skoku
 
 
-jump_number = 2; //How many jumps the player can make
+jump_number =  1; //How many jumps the player can make
 jump_current = 0; //How many jumps the player has remaining
 
 lvl = 0;
@@ -55,7 +55,7 @@ red_hearths = 0;
 blue_hearths = 0;
 purple_hearths = 0;
 green_hearths = 0;
-cash = 1000;
+cash = 200;
 
 
 //Player damaged and death

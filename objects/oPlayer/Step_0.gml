@@ -1,4 +1,8 @@
 //Movement and wall collisions
+if(room=LevelBoss)
+{
+progressMax=500;
+}
 if(dead_play=false)
 {
 key_left = keyboard_check(ord("A"));

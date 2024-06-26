@@ -10,17 +10,14 @@ if(room==Level1)
 	start_counting=true;
 }
 
-if(start_counting)
+if(start_counting and oTheEnd.game_over!=true)
 {
 	player_run_time=player_run_time+1/60;
 }
 
-if (count_score==true and final_time_achieved == false)
+if (count_score==true && final_time_achieved == false)
 {
 final_time = player_run_time;
-final_time_achieved = true;
-start_counting=false;
-	
 if (final_time < 600) {
 	time_factor = 0.01 + (2 - 0.01) * (final_time / 600);
 } else if (final_time < 1200) {
@@ -29,7 +26,9 @@ if (final_time < 600) {
 	time_factor = 0.01;
 }
 
-player_score = enemies_killed * time_factor
+player_score = enemies_killed * time_factor;
+start_counting=false;
+final_time_achieved = true;
 }
 
 

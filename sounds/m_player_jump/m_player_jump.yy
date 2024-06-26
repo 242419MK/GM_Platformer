@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.365687,
+  "duration":1.5,
   "name":"m_player_jump",
   "parent":{
     "name":"Player",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"m_player_jump.mp3",
+  "soundFile":"m_player_jump.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.6,
 }

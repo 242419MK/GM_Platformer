@@ -2,8 +2,8 @@
 // W tym edytorze możesz zapisać swój kod
 if(ending=false)
 {
-	x = oCamera.x
-	y = oCamera.y-20
+	x = oCamera.x;
+	y = oCamera.y-65;
 }
 
 if(game_over=true)
@@ -17,4 +17,14 @@ if(game_over=true)
 		game_end();
 		ending = true;
 	}
+	
+	if(boss_defeated==true)
+	{
+		sprite_index = sEnd_wait_win;
+	}
+	else 
+	{
+		sprite_index = sEnd_wait;
+	}
+	
 }

@@ -1,0 +1,163 @@
+vsp2 = vsp2 + grv2;
+
+if (place_meeting(x, y + vsp2, oWall))
+	{
+		while(!place_meeting(x, y + sign(vsp2) ,oWall))
+		{
+			y = y +sign(vsp2);
+		}
+		vsp2=0;
+	}
+	
+if (!place_meeting(x+turn*32, y + 1, oWall))
+    {
+        turn = -turn;
+    }
+	
+hsp2 = turn * walksp2;
+if (place_meeting(x+hsp2, y, oWall))
+	{
+		while(!place_meeting(x+sign(hsp2), y, oWall))
+		{
+		    x = x + sign(hsp2);
+		}
+		hsp2 = 0;
+		turn = - turn;
+	}
+	
+
+image_xscale = turn;
+	
+image_speed = 1;
+
+//atak melle
+if (place_meeting(x, y, oPlayer) && instance_exists(oPlayer) && !grabbed && !hitted) 
+{
+    speed = 0;
+    sprite_index = sEnemy_A_Attack;
+
+    if (rage_timer == 0) // Sprawdź, czy timer osiągnął dokładnie 12
+    {
+		audio_play_sound(m_enemy_attack1,700,false);
+		audio_play_sound(m_player_hitted,100,false);
+        oPlayer.hp -= damage / oPlayer.armor;
+		oPlayer_hit_melle.show = true;
+		hit_player=true;
+		rage_timer=60;
+    }
+	
+	if(hit_player)
+	{
+		oPlayer.sprite_index = sPlayer_hit;
+		
+		if(rage_timer==15){hit_player=false;}
+	}
+
+    rage_timer--; 
+} 
+
+
+else if (!grabbed)
+{
+    sprite_index = sEnemy_A;
+    x = x + hsp2;
+    y = y + vsp2;
+}
+
+if (!place_meeting(x, y, oPlayer)) 
+{
+    rage_timer = 0;
+	rage=false;
+}
+
+
+if(grabbed)
+{
+	sprite_index = sEnemy_A_hooked;
+	grab_free_time--;
+	if(grab_free_time<=0)
+	{
+		grabbed=false;
+		grab_free_time=180;
+	}
+}
+
+if(grabbed && place_meeting(x,y,oPlayer))
+{
+	speed = 0;
+}
+	
+if(dead==true)
+{
+	oPlayer_info.enemies_killed=oPlayer_info.enemies_killed+1;
+	//var reward = instance_create_layer(x, y-30, "Player", oRedHearth);
+	if(grabbed)
+	{
+		var reward2 = instance_create_layer(x+20, y-20, "Player", oRedHearth);
+	}
+	if(better_reward)
+	{
+		var reward3 = instance_create_layer(x-20, y-20, "Player", oRedHearth);
+	}
+	oBOSS.boss_hp-=20;
+	instance_destroy();
+}
+
+
+if(x>room_width || x<0 || y<0 || y>room_height)
+{
+	oPlayer.red_hearths+=1;
+	oPlayer.progress+=value;
+	instance_destroy();
+}
+
+
+
+if(hitted)
+{
+	if(!sound_played)
+	{
+	audio_play_sound(m_enemy_hitted,1000,false);	
+	sound_played=true;
+	}
+	
+	
+	sprite_index = sEnemy_A_hit;
+	hit_counter--;
+	if(hit_counter<=0)
+	{
+		hit_counter=30;
+		hitted=false;
+		sound_played=false;
+	}
+}
+
+
+if(instance_exists(oPlayer))
+{
+if(timeEnds)
+	{
+		if(!hp_buff)
+		{
+			fullHp=200;
+			hp=fullHp;
+			hp_buff=true;
+		}
+		
+		damage=7;
+		speed = 3;
+		direction = point_direction(x,y, oPlayer.x, oPlayer.y)
+		jump = true;
+	}
+}
+
+if(jump)
+{
+	jump_timer--;
+	if(jump_timer<=0)
+	{
+		jump_height = random_range(30, 60);
+		y -= jump_height
+		jump_timer = random_range(90, 180);
+	}
+}

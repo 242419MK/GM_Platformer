@@ -10,7 +10,7 @@ if(visible)
 			oReroll_upg3.bought=true;
 			oPlayer.cash -= price;
 			oPlayer.double_jump_enabled = true;
-		
+			oPlayer.jump_number=2;
 			transactionCompleted = true;
 			with(oBought)
 			{
