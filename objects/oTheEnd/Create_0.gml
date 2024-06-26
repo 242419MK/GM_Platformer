@@ -3,3 +3,5 @@
 game_over=false;
 ending = false;
 boss_defeated=false;
+boss_bonus = 0;
+points_added=false;

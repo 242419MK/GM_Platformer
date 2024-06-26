@@ -55,7 +55,7 @@ red_hearths = 0;
 blue_hearths = 0;
 purple_hearths = 0;
 green_hearths = 0;
-cash = 200;
+cash = 150;
 
 
 //Player damaged and death

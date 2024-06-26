@@ -9,7 +9,7 @@ if(visible)
 		{
 			oReroll_upg1.bought=true;
 			oPlayer.cash -= price;
-			oPlayer.hp_regen += 0.05;
+			oPlayer.hp_regen += 0.08;
 		
 			transactionCompleted = true;
 			with(oBought)

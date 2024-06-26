@@ -9,7 +9,7 @@ if(visible)
 		{
 			oReroll_upg2.bought=true;
 			oPlayer.cash -= price;
-			oPlayer.hook_speed_bonus += 2;
+			oPlayer.hook_speed_bonus += 3;
 		
 			transactionCompleted = true;
 			with(oBought)

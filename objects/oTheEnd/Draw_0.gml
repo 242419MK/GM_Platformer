@@ -17,7 +17,6 @@ draw_text(x,y+120,"Slayed enemies: "+string(oPlayer_info.enemies_killed))
 if(boss_defeated==true)
 {
 	draw_text(x,y+150,"Boss defeated: "+string(1000))
-	oPlayer_info.player_score+=1000;
 }
 else if(boss_defeated==false)
 {

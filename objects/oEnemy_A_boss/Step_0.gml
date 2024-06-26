@@ -99,7 +99,7 @@ if(dead==true)
 	{
 		var reward3 = instance_create_layer(x-20, y-20, "Player", oRedHearth);
 	}
-	oBOSS.boss_hp-=20;
+	oBOSS.boss_hp-=22;
 	instance_destroy();
 }
 

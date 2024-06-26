@@ -20,7 +20,13 @@ if(game_over=true)
 	
 	if(boss_defeated==true)
 	{
+		boss_bonus=1000;
 		sprite_index = sEnd_wait_win;
+		if(points_added==false)
+		{
+				oPlayer_info.player_score+=boss_bonus;
+				points_added=true;
+		}
 	}
 	else 
 	{

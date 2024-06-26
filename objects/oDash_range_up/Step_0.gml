@@ -9,7 +9,7 @@ if(visible)
 		{
 			oReroll_upg4.bought=true;
 			oPlayer.cash -= price;
-			oPlayer.dash_length +=50;
+			oPlayer.dash_length +=70;
 		
 			transactionCompleted = true;
 			with(oBought)

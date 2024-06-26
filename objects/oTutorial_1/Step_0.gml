@@ -7,10 +7,14 @@ if(!instance_exists(oEnemy_A) && enemies_killed < enemies_killed_max)
 	if(wait_counter<=0)
 	{
 		enemy =  instance_create_layer(x, y, "Enemies", oEnemy_A);
-		enemy.value=0;
+		enemy.value=149;
 		enemy.damage = 12;
 		wait_counter=120;
 	}
+}
+if(oPlayer.progress>=oPlayer.progressMax)
+{
+	oPlayer.progress=oPlayer.progressMax-5;
 }
 
 if(oPlayer.red_hearths>enemies_killed)
@@ -28,7 +32,7 @@ if(instance_exists(oEnemy_A))
 }
 
 
-if(oPlayer.red_hearths>3)
+if(oPlayer.red_hearths>=1)
 {
 	open = true;
 }

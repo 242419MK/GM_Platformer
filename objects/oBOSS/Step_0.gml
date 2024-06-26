@@ -1,12 +1,8 @@
 /// @description Wstaw opis w tym miejscu
 // W tym edytorze możesz zapisać swój kod
-start_fight_counter++;
-if(start_fight_counter==start_time)
-{
-	boss_stage=0;
-}
 
-if(boss_hp<=0.75*boss_hp_max and boss_hp>=0.5*boss_hp_max)
+
+if(boss_hp<=0.75*boss_hp_max and boss_hp>=0.5*boss_hp_max and final_phase==false )
 {
 	boss_stage=1;
 }
@@ -19,7 +15,7 @@ else  if(boss_hp<=0.25*boss_hp_max and boss_hp>=0.0)
 	boss_stage=3;
 }
 
-if(final_phase=true)
+if(final_phase==true)
 {
 	boss_stage=3;
 }
@@ -30,7 +26,7 @@ if(boss_stage==0 and final_phase==false)
 	stage_0_counter++;
 	if(stage_0_counter==stage_0_spawntime and spawn_red_end==false)
 	{
-		 var red = instance_create_layer(1100+adjust, 150, "Enemies", oEnemy_A_boss);
+		 var red = instance_create_layer(1100+adjust, 200, "Enemies", oEnemy_A_boss);
 		 adjust+=64;
 		 stage_0_counter=0;
 	}
@@ -101,9 +97,9 @@ else if(boss_stage==3)
 	{
 	 var spawner3= instance_create_layer(1290, 190, "Enemies", oSpawner_enemy_L_boss);
 	 var spawner4 = instance_create_layer(1770, 190, "Enemies", oSpawner_enemy_L_boss);
-	 
-	 var spawner5= instance_create_layer(1450, 90, "Enemies", oSpawner_enemy_S_boss);
-	 var spawner6 = instance_create_layer(1620, 90, "Enemies", oSpawner_enemy_S_boss);
+	 var spawner7 = instance_create_layer(1530, 190, "Enemies", oSpawner_enemy_L_boss);
+	 var spawner5= instance_create_layer(1450, 220, "Enemies", oSpawner_enemy_S_boss);
+	 var spawner6 = instance_create_layer(1620, 220, "Enemies", oSpawner_enemy_S_boss);
 	 spawn_final_end=true;
 	}
 
@@ -117,12 +113,13 @@ if(boss_hp<=0)
 }
 
 
-if(boss_hp<=0.499 * boss_hp_max and heal==true)
+if(boss_hp<=0.4 * boss_hp_max and heal==true)
 {
-	boss_hp+=1;
-	if(boss_hp>=0.5 * boss_hp_max)
+	boss_hp+=bonus;
+	if(boss_hp>0.39 * boss_hp_max)
 	{
 		heal=false;
+		bonus=0;
 	}
 }
 

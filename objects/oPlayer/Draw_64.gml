@@ -88,7 +88,7 @@ draw_sprite_ext(sDouble_Jump_enable,0,510,textY+10,0.26,0.4,0,c_white,1);
 }
 
 
-if(dash_cd<=0){
+if(dash_cd<=0 && dash_enabled==true){
 draw_sprite_ext(sDash,0,560,textY+10,0.5,0.4,0,c_white,1);
 }
 else 
